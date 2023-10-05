@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // Creating the main menu view
 
@@ -38,3 +37,4 @@ class _menu_view extends State<menu_view> {
     );
   }
 }
+

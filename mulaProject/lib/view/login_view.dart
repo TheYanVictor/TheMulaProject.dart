@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class login_view extends StatefulWidget {
   const login_view({super.key});
 
@@ -42,26 +41,26 @@ class _login_viewState extends State<login_view> {
             height: 20,
           ),
           OutlinedButton(
-              onPressed: () {},
-            child: Text('entrar'),
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  'main_menu',
+                );
+              },
+              child: Text('entrar'),
               style: OutlinedButton.styleFrom(
                   backgroundColor: Color.fromARGB(78, 232, 157, 60),
                   foregroundColor: Colors.black,
                   minimumSize: Size(120, 60))),
           SizedBox(height: 30,),
           TextButton(
-            onPressed: () {},
-            child: Text(
-              'Não possui uma conta? Cadastre-se',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.getFont('Dela Gothic One')
-            ),
-            
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.black
-            )
-          )
-          
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+              child: Text('Não possui uma conta? Cadastre-se',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.getFont('Dela Gothic One')),
+              style: TextButton.styleFrom(foregroundColor: Colors.black))
         ],
       ),
     ));
