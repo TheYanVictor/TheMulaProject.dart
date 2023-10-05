@@ -43,7 +43,7 @@ class _login_viewState extends State<login_view> {
           ),
           OutlinedButton(
               onPressed: () {},
-              child: Text('entrar'),
+            child: Text('entrar'),
               style: OutlinedButton.styleFrom(
                   backgroundColor: Color.fromARGB(78, 232, 157, 60),
                   foregroundColor: Colors.black,
@@ -55,10 +55,12 @@ class _login_viewState extends State<login_view> {
               textAlign: TextAlign.center,
               style: GoogleFonts.getFont('Dela Gothic One')
             ),
+            
             style: TextButton.styleFrom(
               foregroundColor: Colors.black
             )
           )
+          
         ],
       ),
     ));
