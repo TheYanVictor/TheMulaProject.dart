@@ -48,6 +48,7 @@ class _login_viewState extends State<login_view> {
                   backgroundColor: Color.fromARGB(78, 232, 157, 60),
                   foregroundColor: Colors.black,
                   minimumSize: Size(120, 60))),
+          SizedBox(height: 30,),
           TextButton(
             onPressed: () {},
             child: Text(
