@@ -16,6 +16,24 @@ class _menu_view extends State<menu_view> {
     return const Scaffold(
       body: Padding(
         padding: EdgeInsets.all(100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //row 1 -
+            Row(
+                //add code
+                ),
+            //row 2
+            Row(
+                //add code
+                ),
+            //row 3
+            Row(
+                //add code
+                ),
+          ],
+        ),
       ),
     );
   }
