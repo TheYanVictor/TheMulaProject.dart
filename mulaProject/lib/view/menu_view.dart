@@ -14,7 +14,9 @@ class _menu_view extends State<menu_view> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      
+      body: Padding(
+        padding: EdgeInsets.all(100),
+      ),
     );
   }
 }
