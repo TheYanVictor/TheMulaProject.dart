@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class login_view extends StatefulWidget {
@@ -10,48 +12,45 @@ class login_view extends StatefulWidget {
 class _login_viewState extends State<login_view> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(100),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: double.infinity
-            ),
-            Icon(
-              Icons.account_circle,
-              size: 100,
-            ),
-
-            SizedBox(
-              height: 30,
-            ),
-
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Email'
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
-            ),
-
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Senha'
-              ),
-            ),
-
-          ],
+    return Scaffold(
+        body: Padding(
+      padding: EdgeInsets.all(100),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(width: double.infinity),
+          Icon(
+            Icons.account_circle,
+            size: 100,
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          TextField(
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), labelText: 'Email'),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          TextField(
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), labelText: 'Senha'),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text('entrar'),
+            style: OutlinedButton.styleFrom(
+              
+            )
+          ),
+        ],
       ),
-      )
-      
-    );
+    ));
   }
 }
 
