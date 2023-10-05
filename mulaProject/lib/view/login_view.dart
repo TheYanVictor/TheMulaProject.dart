@@ -42,12 +42,11 @@ class _login_viewState extends State<login_view> {
             height: 20,
           ),
           OutlinedButton(
-            onPressed: () {},
-            child: Text('entrar'),
-            style: OutlinedButton.styleFrom(
-              
-            )
-          ),
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+              child: Text('entrar'),
+              style: OutlinedButton.styleFrom()),
         ],
       ),
     ));

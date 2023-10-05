@@ -16,7 +16,7 @@ void main() {
         initialRoute: 'login',
         routes: {
           'login' : (context) => login_view(),
-          'menu' : (context) => menu_view(),
+          'main_menu' : (context) => menu_view(),
         }
       ),
     ),
