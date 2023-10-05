@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:trabalho_01/view/login_view.dart';
+import 'package:trabalho_01/view/menu_view.dart';
 
 
 void main() {
@@ -14,7 +15,8 @@ void main() {
         //rotas de navegação
         initialRoute: 'login',
         routes: {
-          'login' : (context) => login_view()
+          'login' : (context) => login_view(),
+          'menu' : (context) => menu_view(),
         }
       ),
     ),
