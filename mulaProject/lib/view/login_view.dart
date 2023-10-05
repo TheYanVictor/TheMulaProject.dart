@@ -51,8 +51,8 @@ class _login_viewState extends State<login_view> {
               style: OutlinedButton.styleFrom(
 
                  textStyle: TextStyle(
-                      fontSize: 28,
-                    ),
+                  fontSize: 28,
+                  ),
               ),
               child: Text('Login'),
               onPressed:
