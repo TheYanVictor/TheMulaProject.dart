@@ -49,14 +49,13 @@ class _login_viewState extends State<login_view> {
 
             OutlinedButton(
               style: OutlinedButton.styleFrom(
-
                  textStyle: TextStyle(
                   fontSize: 28,
                   ),
               ),
               child: Text('Login'),
-              onPressed:
-            )
+              //onPressed:
+            ),
           ],
       ),
       )
