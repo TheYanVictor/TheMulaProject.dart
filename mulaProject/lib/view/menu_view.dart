@@ -21,20 +21,28 @@ class _menu_view extends State<menu_view> {
           children: [
             //row 1 -
             Row(
-                //add code
+              //add code
+              children: [
+                SizedBox(width: double.infinity),
+                Icon(Icons.account_balance_sharp,
+                    size: 100, color: Color.fromRGBO(198, 37, 198, 0.612)),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Saldo'),
                 ),
+              ],
+            ),
             //row 2
-            Row(
-                //add code
-                ),
+            //Row(
+            //add code
+            //),
             //row 3
-            Row(
-                //add code
-                ),
+            //Row(
+            //add code
+            // ),
           ],
         ),
       ),
     );
   }
 }
-
