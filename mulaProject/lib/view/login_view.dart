@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 //flutter pub add google_fonts
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
 
@@ -19,7 +19,7 @@ class _login_viewState extends State<login_view> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: EdgeInsets.all(100),
+      padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,38 +32,66 @@ class _login_viewState extends State<login_view> {
           ),
           TextField(
             decoration: InputDecoration(
-                border: OutlineInputBorder(), labelText: 'Email'),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(10),
+                  right: Radius.circular(10),
+                ),
+                
+              ),
+              
+              labelText: 'Email',
+            ),
           ),
           SizedBox(
             height: 20,
           ),
           TextField(
             decoration: InputDecoration(
-                border: OutlineInputBorder(), labelText: 'Senha'),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(10), right: Radius.circular(10))),
+                labelText: 'Senha',
+                suffix: Text(
+                  'Ver',
+                  style: TextStyle(color: Colors.orange),
+                )),
+            obscureText: true,
           ),
           SizedBox(
             height: 20,
           ),
           OutlinedButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  'main_menu',
-                );
-              },
-              child: Text('entrar'),
-              style: OutlinedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(78, 232, 157, 60),
-                  foregroundColor: Colors.black,
-                  minimumSize: Size(120, 60))),
-          SizedBox(height: 30,),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                'main_menu',
+              );
+            },
+            child: Text(
+              'entrar',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.getFont('Roboto'),
+            ),
+            style: OutlinedButton.styleFrom(
+              backgroundColor: Color.fromARGB(78, 232, 157, 60),
+              foregroundColor: Colors.black,
+              minimumSize: Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
           TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'main_menu');
               },
               child: Text('Não possui uma conta? Cadastre-se',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont('Dela Gothic One')),
+                  style: GoogleFonts.getFont('Roboto')),
               style: TextButton.styleFrom(foregroundColor: Colors.black))
         ],
       ),
