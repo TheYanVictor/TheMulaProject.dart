@@ -37,9 +37,7 @@ class _login_viewState extends State<login_view> {
                   left: Radius.circular(10),
                   right: Radius.circular(10),
                 ),
-                
               ),
-              
               labelText: 'Email',
             ),
           ),
@@ -98,3 +96,5 @@ class _login_viewState extends State<login_view> {
     ));
   }
 }
+
+//teste
