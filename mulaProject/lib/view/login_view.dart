@@ -24,16 +24,11 @@ class _login_viewState extends State<login_view> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(width: double.infinity, height: 0),
-          Text(
-            'Entrar',
-            style: TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.bold
-            ),
-          ),
+          SizedBox(width: double.infinity),
+          Icon(Icons.account_circle,
+              size: 100, color: Color.fromARGB(255, 232, 158, 60)),
           SizedBox(
-            height: 100,
+            height: 30,
           ),
           TextField(
             decoration: InputDecoration(
@@ -43,14 +38,7 @@ class _login_viewState extends State<login_view> {
                   right: Radius.circular(10),
                 ),
               ),
-              label: Text(
-                'E-mail',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                  fontSize: 16
-                ),
-              )
+              labelText: 'Email',
             ),
           ),
           SizedBox(
@@ -61,53 +49,16 @@ class _login_viewState extends State<login_view> {
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.horizontal(
                         left: Radius.circular(10), right: Radius.circular(10))),
-                label: Text(
-                'Senha',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                  fontSize: 16
-                ),
-              ),
-                suffix: TextButton(
-                  child: Text(
-                    'Ver   ', //ignora a gambiarra 
-                    style: TextStyle(
-                      color: Color(0xFFF24C3D),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    //adicionar funcionalidade de "desobscurecer" o texto do textField
-                  },
-                  style: TextButton.styleFrom(
-                    minimumSize: Size.zero,
-                    padding: EdgeInsets.zero, 
-                  )
-                )
-                
-                ),
+                labelText: 'Senha',
+                suffix: Text(
+                  'Ver',
+                  style: TextStyle(color: Colors.orange),
+                )),
             obscureText: true,
           ),
-
-           SizedBox(
-            height: 10,
-          ),
-
-          TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'main_menu');
-              },
-              child: Text('Esqueceu a senha?',
-                  textScaleFactor: 1.3,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont('Roboto')),
-              style: TextButton.styleFrom(foregroundColor: Color(0xFFF24C3D))),
-
           SizedBox(
-            height: 40,
+            height: 20,
           ),
-
           OutlinedButton(
             onPressed: () {
               Navigator.pushNamed(
@@ -116,18 +67,14 @@ class _login_viewState extends State<login_view> {
               );
             },
             child: Text(
-              'Entrar',
+              'entrar',
               textAlign: TextAlign.center,
-              style: GoogleFonts.getFont('Inter'),
+              style: GoogleFonts.getFont('Roboto'),
             ),
             style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xFFF24C3D),
-              foregroundColor: Color(0xFFF6F6F6),
+              backgroundColor: Color.fromARGB(78, 232, 157, 60),
+              foregroundColor: Colors.black,
               minimumSize: Size(double.infinity, 50),
-              textStyle: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal
-              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0),
               ),
@@ -136,48 +83,18 @@ class _login_viewState extends State<login_view> {
           SizedBox(
             height: 30,
           ),
-
-          Text(
-            'Não possui uma conta?',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF666666)
-            )
-          ),
-
-          SizedBox(
-            height: 10,
-          ),
-
-          OutlinedButton(
-            onPressed: () {
-              Navigator.pushNamed(
-                context,
-                'main_menu',
-              );
-            },
-            child: Text(
-              'Inscrever-se',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.getFont('Inter'),
-            ),
-            style: OutlinedButton.styleFrom(
-              backgroundColor: Color(0xFFF24C3D),
-              foregroundColor: Color(0xFFF6F6F6),
-              minimumSize: Size(double.infinity, 50),
-              textStyle: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
-              ),
-            ),
-          ),
-
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+              child: Text('Não possui uma conta? Cadastre-se',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.getFont('Roboto')),
+              style: TextButton.styleFrom(foregroundColor: Colors.black))
         ],
       ),
     ));
   }
 }
+
+//teste
