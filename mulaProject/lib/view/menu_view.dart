@@ -22,7 +22,9 @@ class _menu_view extends State<menu_view> {
       body: Padding(
         padding: EdgeInsets.all(100),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+
+          //alinhamento da coluna principal
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             //row 1 -
@@ -40,30 +42,37 @@ class _menu_view extends State<menu_view> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.account_balance,
-                          size: 70,
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, 'financeiro');
-                        },
-                      ),
+                    //Primeira linha - 2 icones
+                    Row(
+                      //parametros da row
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        //primeiro botao
+                        Container(),
+                        //segundo botao
+                        Container(),
+                      ],
                     ),
-                    Container(
-                      height: 60,
-                      width: 80,
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        'Saldo',
-                        style: TextStyle(fontSize: 25),
-                        textAlign: TextAlign.center,
-                      ),
+                    //segunda coluna - icone de perfil
+                    Stack(
+                      //parametros da row
+                      alignment: AlignmentDirectional.center,
+                      //botao
+                      children: [
+                        Container(),
+                      ],
                     ),
-                  ],
-                ),
+                    //terceira fileira de icons
+                    Row(
+                      //parametros da row
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        //primeiro icone
+                        Container(),
+                        //segundo icone
+                        Container(),
+                      ],
+                    ),
               ],
             ),
             //],                                                     errado?
