@@ -20,71 +20,128 @@ class _menu_view extends State<menu_view> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(100),
+        padding: EdgeInsets.all(95),
         child: Column(
-
-          //alinhamento da coluna principal
+          //alinhamento da coluna principal - tudo ta em uma coluna só
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            //row 1 -
-            //Row(                                                      //errado?
-            //add code
-            //children: [
-            SizedBox(
-              height: 10,
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //crossAxisAlignment:CrossAxisAlignment.values(20, 50),
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     //Primeira linha - 2 icones
                     Row(
                       //parametros da row
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        //primeiro botao
-                        Container(),
-                        //segundo botao
-                        Container(),
+                        Stack(
+                          //posicao
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            //primeiro botao
+                            Container(
+                              color: Colors.amberAccent,
+                              width: 100,
+                              height: 100,
+                            ),
+                            //segundo botao
+                            Container(
+                              color: Colors.black,
+                              width: 50,
+                              height: 50,
+                            ),
+                          ],
+                        ),
+                        Stack(
+                          //posicao
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            //primeiro botao
+                            Container(
+                              color: Colors.amberAccent,
+                              width: 100,
+                              height: 100,
+                            ),
+                            //segundo botao
+                            Container(
+                              color: Colors.black,
+                              width: 50,
+                              height: 50,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                     //segunda coluna - icone de perfil
                     Stack(
-                      //parametros da row
+                      //posicao
                       alignment: AlignmentDirectional.center,
-                      //botao
                       children: [
-                        Container(),
+                        //botao unico
+                        Container(
+                          color: Colors.amberAccent,
+                          width: 150,
+                          height: 150,
+                        ),
+                        Container(
+                          color: Colors.black,
+                          height: 90,
+                          width: 90,
+                        ),
                       ],
                     ),
-                    //terceira fileira de icons
+                    //primeiro botao da terceira fileira
                     Row(
-                      //parametros da row
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        //primeiro icone
-                        Container(),
-                        //segundo icone
-                        Container(),
+                        Stack(
+                          //parametros da row
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            //primeiro icone
+                            Container(
+                              color: Colors.amberAccent,
+                              width: 100,
+                              height: 100,
+                            ),
+                            //segundo icone
+                            Container(
+                              color: Colors.black,
+                              width: 50,
+                              height: 50,
+                            ),
+                          ],
+                        ),
+                        //segundo botao da terceira fileira
+                        Stack(
+                          //parametros da row
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            //primeiro icone
+                            Container(
+                              color: Colors.amberAccent,
+                              width: 100,
+                              height: 100,
+                            ),
+                            //segundo icone
+                            Container(
+                              color: Colors.black,
+                              width: 50,
+                              height: 50,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
+                  ],
+                ),
               ],
             ),
-            //],                                                     errado?
-            //),                                                      errado?
-            //row 2
-            //Row(
-            //add code
-            //),
-            //row 3
-            //Row(
-            //add code
-            // ),
           ],
         ),
       ),
