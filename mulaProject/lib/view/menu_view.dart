@@ -43,35 +43,86 @@ class _menu_view extends State<menu_view> {
                           //posicao
                           alignment: AlignmentDirectional.center,
                           children: [
-                            //primeiro botao
+                            //Botao - PRODUTOS
                             Container(
-                              color: Colors.amberAccent,
+                              decoration: const BoxDecoration(
+                                border:
+                                    //borda esquerda
+                                    Border(
+                                  left: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  //borda direita
+                                  right: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  top: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  bottom: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                ),
+                              ),
                               width: 100,
                               height: 100,
+                              child: IconButton(
+                                icon: const Icon(Icons.local_mall),
+                                iconSize: 60,
+                                color: Colors.orange,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'financeiro');
+                                },
+                              ),
                             ),
-                            //segundo botao
-                            Container(
-                              color: Colors.black,
-                              width: 50,
-                              height: 50,
-                            ),
+                            //Botao Lista
+                            Container(),
                           ],
                         ),
                         Stack(
                           //posicao
                           alignment: AlignmentDirectional.center,
                           children: [
-                            //primeiro botao
+                            //segundp botao
+                            //externo
                             Container(
-                              color: Colors.amberAccent,
+                              decoration: const BoxDecoration(
+                                border:
+                                    //borda esquerda
+                                    Border(
+                                  left: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  //borda direita
+                                  right: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  top: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  bottom: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                ),
+                              ),
                               width: 100,
                               height: 100,
-                            ),
-                            //segundo botao
-                            Container(
-                              color: Colors.black,
-                              width: 50,
-                              height: 50,
+                              child: IconButton(
+                                icon: const Icon(Icons.list),
+                                iconSize: 60,
+                                color: Colors.orange,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'listas');
+                                },
+                              ),
                             ),
                           ],
                         ),
@@ -84,55 +135,131 @@ class _menu_view extends State<menu_view> {
                       children: [
                         //botao unico
                         Container(
-                          color: Colors.amberAccent,
-                          width: 150,
-                          height: 150,
-                        ),
-                        Container(
-                          color: Colors.black,
-                          height: 90,
-                          width: 90,
+                          decoration: const BoxDecoration(
+                            border:
+                                //borda esquerda
+                                Border(
+                              left: BorderSide(
+                                color: Colors.orange,
+                                width: 5,
+                              ),
+                              //borda direita
+                              right: BorderSide(
+                                color: Colors.orange,
+                                width: 5,
+                              ),
+                              top: BorderSide(
+                                color: Colors.orange,
+                                width: 5,
+                              ),
+                              bottom: BorderSide(
+                                color: Colors.orange,
+                                width: 5,
+                              ),
+                            ),
+                          ),
+                          width: 100,
+                          height: 100,
+                          child: IconButton(
+                            icon: const Icon(Icons.person_off),
+                            iconSize: 60,
+                            color: Colors.orange,
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'perfil');
+                            },
+                          ),
                         ),
                       ],
                     ),
-                    //primeiro botao da terceira fileira
+                    //terceira linha - 2 icones
                     Row(
+                      //parametros da row
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Stack(
-                          //parametros da row
+                          //posicao
                           alignment: AlignmentDirectional.center,
                           children: [
-                            //primeiro icone
+                            //Botao - Saldo
                             Container(
-                              color: Colors.amberAccent,
+                              decoration: const BoxDecoration(
+                                border:
+                                    //borda esquerda
+                                    Border(
+                                  left: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  //borda direita
+                                  right: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  top: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  bottom: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                ),
+                              ),
                               width: 100,
                               height: 100,
+                              child: IconButton(
+                                icon: const Icon(Icons.chat),
+                                iconSize: 60,
+                                color: Colors.orange,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'grupos');
+                                },
+                              ),
                             ),
-                            //segundo icone
-                            Container(
-                              color: Colors.black,
-                              width: 50,
-                              height: 50,
-                            ),
+                            //Botao Lista
+                            Container(),
                           ],
                         ),
-                        //segundo botao da terceira fileira
                         Stack(
-                          //parametros da row
+                          //posicao
                           alignment: AlignmentDirectional.center,
                           children: [
-                            //primeiro icone
+                            //segundp botao
+                            //externo
                             Container(
-                              color: Colors.amberAccent,
+                              decoration: const BoxDecoration(
+                                border:
+                                    //borda esquerda
+                                    Border(
+                                  left: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  //borda direita
+                                  right: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  top: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                  bottom: BorderSide(
+                                    color: Colors.orange,
+                                    width: 5,
+                                  ),
+                                ),
+                              ),
                               width: 100,
                               height: 100,
-                            ),
-                            //segundo icone
-                            Container(
-                              color: Colors.black,
-                              width: 50,
-                              height: 50,
+                              child: IconButton(
+                                icon: const Icon(Icons.account_balance),
+                                iconSize: 60,
+                                color: Colors.orange,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'financeiro');
+                                },
+                              ),
                             ),
                           ],
                         ),
