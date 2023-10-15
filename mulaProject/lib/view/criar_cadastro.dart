@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class produtos_main_view extends StatefulWidget {
-  const produtos_main_view({super.key});
+class criarCadastrp extends StatefulWidget {
+  const criarCadastrp({super.key});
 
   @override
-  State<produtos_main_view> createState() => _produtos_main_viewState();
+  State<criarCadastrp> createState() => _criarCadastrpState();
 }
 
-class _produtos_main_viewState extends State<produtos_main_view> {
+class _criarCadastrpState extends State<criarCadastrp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
           children: [
             SizedBox(width: double.infinity, height: 0),
             Text(
-              'Produtos',
+              'Criar cadastro',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
           ],

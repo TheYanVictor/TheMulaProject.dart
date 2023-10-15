@@ -1,7 +1,3 @@
-import 'dart:html';
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/navigator.dart';
@@ -23,16 +19,15 @@ class _menu_view extends State<menu_view> {
         padding: EdgeInsets.all(95),
         child: Column(
           //alinhamento da coluna principal - tudo ta em uma coluna só
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //crossAxisAlignment:CrossAxisAlignment.values(20, 50),
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.center, //muda o icone perfil
                   children: [
                     //Primeira linha - 2 icones
                     Row(
@@ -41,7 +36,7 @@ class _menu_view extends State<menu_view> {
                       children: [
                         Stack(
                           //posicao
-                          alignment: AlignmentDirectional.center,
+                          alignment: AlignmentDirectional.topStart,
                           children: [
                             //Botao - PRODUTOS
                             Container(
@@ -50,37 +45,36 @@ class _menu_view extends State<menu_view> {
                                     //borda esquerda
                                     Border(
                                   left: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   //borda direita
                                   right: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   top: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   bottom: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                 ),
                               ),
                               width: 100,
                               height: 100,
+                              //Icone
                               child: IconButton(
                                 icon: const Icon(Icons.local_mall),
                                 iconSize: 60,
-                                color: Colors.orange,
+                                color: Color(0xFF292D32),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'financeiro');
+                                  Navigator.pushNamed(context, 'produtos');
                                 },
                               ),
                             ),
-                            //Botao Lista
-                            Container(),
                           ],
                         ),
                         Stack(
@@ -95,30 +89,31 @@ class _menu_view extends State<menu_view> {
                                     //borda esquerda
                                     Border(
                                   left: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   //borda direita
                                   right: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   top: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   bottom: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                 ),
                               ),
                               width: 100,
                               height: 100,
+                              //icones
                               child: IconButton(
                                 icon: const Icon(Icons.list),
                                 iconSize: 60,
-                                color: Colors.orange,
+                                color: Color(0xFF292D32),
                                 onPressed: () {
                                   Navigator.pushNamed(context, 'listas');
                                 },
@@ -140,30 +135,31 @@ class _menu_view extends State<menu_view> {
                                 //borda esquerda
                                 Border(
                               left: BorderSide(
-                                color: Colors.orange,
+                                color: Color(0xFFF24C3D),
                                 width: 5,
                               ),
                               //borda direita
                               right: BorderSide(
-                                color: Colors.orange,
+                                color: Color(0xFFF24C3D),
                                 width: 5,
                               ),
                               top: BorderSide(
-                                color: Colors.orange,
+                                color: Color(0xFFF24C3D),
                                 width: 5,
                               ),
                               bottom: BorderSide(
-                                color: Colors.orange,
+                                color: Color(0xFFF24C3D),
                                 width: 5,
                               ),
                             ),
                           ),
                           width: 100,
                           height: 100,
+                          //icone
                           child: IconButton(
                             icon: const Icon(Icons.person_off),
                             iconSize: 60,
-                            color: Colors.orange,
+                            color: Color(0xFF292D32),
                             onPressed: () {
                               Navigator.pushNamed(context, 'perfil');
                             },
@@ -187,30 +183,31 @@ class _menu_view extends State<menu_view> {
                                     //borda esquerda
                                     Border(
                                   left: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   //borda direita
                                   right: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   top: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   bottom: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                 ),
                               ),
                               width: 100,
                               height: 100,
+                              //icone
                               child: IconButton(
                                 icon: const Icon(Icons.chat),
                                 iconSize: 60,
-                                color: Colors.orange,
+                                color: Color(0xFF292D32),
                                 onPressed: () {
                                   Navigator.pushNamed(context, 'grupos');
                                 },
@@ -232,30 +229,31 @@ class _menu_view extends State<menu_view> {
                                     //borda esquerda
                                     Border(
                                   left: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   //borda direita
                                   right: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   top: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                   bottom: BorderSide(
-                                    color: Colors.orange,
+                                    color: Color(0xFFF24C3D),
                                     width: 5,
                                   ),
                                 ),
                               ),
                               width: 100,
                               height: 100,
+                              //icone
                               child: IconButton(
                                 icon: const Icon(Icons.account_balance),
                                 iconSize: 60,
-                                color: Colors.orange,
+                                color: Color(0xFF292D32),
                                 onPressed: () {
                                   Navigator.pushNamed(context, 'financeiro');
                                 },

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class produtos_main_view extends StatefulWidget {
-  const produtos_main_view({super.key});
+class esqueceuSenha extends StatefulWidget {
+  const esqueceuSenha({super.key});
 
   @override
-  State<produtos_main_view> createState() => _produtos_main_viewState();
+  State<esqueceuSenha> createState() => _esqueceuSenhaState();
 }
 
-class _produtos_main_viewState extends State<produtos_main_view> {
+class _esqueceuSenhaState extends State<esqueceuSenha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
           children: [
             SizedBox(width: double.infinity, height: 0),
             Text(
-              'Produtos',
+              'Esqueceu Senha',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
           ],
