@@ -33,9 +33,9 @@ void main() {
             'listas': (context) => listas_main_view(),
             'perfil': (context) => perfil_main_view(),
             'grupos': (context) => grupos_main_view(),
-            'esqueceu_senha' : (context) => esqueceuSenha(),
+            'esqueceu_senha': (context) => esqueceuSenha(),
             'criar_cadastro': (context) => criarCadastrp(),
-            'produtos' : (context) => produtos_main_view(),
+            'produtos': (context) => produtos_main_view(),
           }),
     ),
   );
@@ -48,6 +48,54 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(),
+    );
+  }
+}
+
+//app bar para todas as telas
+class cabecalho extends StatefulWidget {
+  const cabecalho({super.key});
+
+  @override
+  State<cabecalho> createState() => _cabecalhoState();
+}
+
+class _cabecalhoState extends State<cabecalho> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Color(0xFFF24C3D),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          //Voltar para a pagina anterior
+          Container(
+            child: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              iconSize: 40,
+              color: Colors.white,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+          Text(
+            'Bem vindo!',
+            style: TextStyle(color: Colors.white),
+          ),
+          //Botao de home
+          Container(
+            child: IconButton(
+              icon: const Icon(Icons.house),
+              iconSize: 40,
+              color: Colors.white,
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

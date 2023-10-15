@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/navigator.dart';
+import 'package:trabalho_01/main.dart';
 
 // Creating the main menu view
 
