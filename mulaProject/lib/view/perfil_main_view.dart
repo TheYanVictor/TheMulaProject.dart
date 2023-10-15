@@ -23,7 +23,7 @@ class _perfil_main_viewState extends State<perfil_main_view> {
         //
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //
             //Voltar para a pagina anterior                      falta alinhar para cima
