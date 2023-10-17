@@ -15,6 +15,9 @@ class login_view extends StatefulWidget {
 }
 
 class _login_viewState extends State<login_view> {
+  //estado da senha
+  bool senhaInvisivel = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,14 +74,19 @@ class _login_viewState extends State<login_view> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onPressed: () {
-                      //adicionar funcionalidade de "desobscurecer" o texto do textField
-                    },
+                     onPressed: () {
+                          bool estado = senhaInvisivel;
+                          //funcionalidade de "desobscurecer" o texto do textField
+                          setState(() {
+                            senhaInvisivel = !estado;
+                          });
+                          
+                        },
                     style: TextButton.styleFrom(
                       minimumSize: Size.zero,
                       padding: EdgeInsets.zero,
                     ))),
-            obscureText: true,
+            obscureText: senhaInvisivel,
           ),
           SizedBox(
             height: 10,
