@@ -1,3 +1,12 @@
 {
-    "gitHistory.logLevel": "None"
+    "gitHistory.logLevel": "None",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "diffEditor.experimental.showEmptyDecorations": false,
+    "editor.minimap.enabled": true,
+    "workbench.preferredDarkColorTheme": "Default High Contrast",
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.statusBar.visible": true,
+    "editor.renderWhitespace": "none"
 }
