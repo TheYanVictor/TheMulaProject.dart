@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
+
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/navigator.dart';
@@ -16,6 +20,57 @@ class _menu_view extends State<menu_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+        toolbarHeight: 100,
+        centerTitle: true,
+        forceMaterialTransparency: true,
+        backgroundColor: Colors.white,
+
+        leading: Container(
+          padding: EdgeInsets.only(left: 10),
+          child: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, 'login');
+          },
+          icon: Icon(Icons.logout_outlined, color:Color(0xFFF24C3D), size: 40),
+        )),
+
+        title: Container(
+        
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                'Usuário',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color(0xff666666)
+                ),
+              ),
+              Text(
+                'Bem Vindo!',
+                style: TextStyle(
+                  fontSize: 35,
+                  color: Color(0xff231E1A),
+                  fontWeight: FontWeight.bold
+                )
+              )
+            ],
+          ),
+        ),
+        actions: [
+          Container(
+          padding: EdgeInsets.only(right: 20),
+          child: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, 'login');
+          },
+          icon: Icon(Icons.settings, color:Color(0xFFF24C3D), size: 40),
+        )),
+        ],
+      ),
+
       body: Padding(
         padding: EdgeInsets.all(95),
         child: Column(
