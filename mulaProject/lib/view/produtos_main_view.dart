@@ -7,6 +7,9 @@ class produtos_main_view extends StatefulWidget {
   State<produtos_main_view> createState() => _produtos_main_viewState();
 }
 
+//tamanho da lista de produtos
+var list = List<int>.generate(10, (i) => i + 1);
+
 class _produtos_main_viewState extends State<produtos_main_view> {
   @override
   Widget build(BuildContext context) {
@@ -63,37 +66,129 @@ class _produtos_main_viewState extends State<produtos_main_view> {
       ),
 
       body:
-          //      Campo de procura
-          Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+          //Campo de procura
+          Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
-            //espaço do appbar
-            height: 150,
-          ),
-          Container(
-            //Caixa do texto
-            alignment: Alignment.centerLeft,
-            //tamanho do quadrado
-            width: 300,
-            height: 90,
-            child: TextField(
-              decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black38, width: 5),
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(40),
-                      right: Radius.circular(40),
-                    ),
+          Expanded(
+            //flex é a porcentagem do espaço a ser utilizado pelo widget em relação ao compartimento pai
+            flex: 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  //espaço do appbar
+                  height: 120,
+                ),
+                Container(
+                  //Caixa do texto
+                  alignment: Alignment.centerLeft,
+                  //tamanho do quadrado de busca
+                  width: 300,
+                  height: 90,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.black38, width: 5),
+                          borderRadius: BorderRadius.horizontal(
+                            left: Radius.circular(40),
+                            right: Radius.circular(40),
+                          ),
+                        ),
+                        label: Text(
+                          '  Procurar',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey,
+                              fontSize: 27),
+                        )),
                   ),
-                  label: Text(
-                    '  Procurar',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                        fontSize: 27),
-                  )),
+                ),
+              ],
             ),
+          ),
+          //espaço do appbar
+          SizedBox(
+            height: 30,
+            child: Container(
+              color: Colors.amberAccent,
+            ),
+          ),
+          //Primeira fileira de produtos
+          Expanded(
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.black,
+                )
+              ],
+            ),
+          ),
+          //Segunda fileira de produtos
+          Expanded(
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.black,
+                )
+              ],
+            ),
+          ),
+          //Terceira fileira de produtos
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      //color: Colors.black,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        //scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, list) {
+                          return Container(
+                            //esse container é só pra alterar a altura dos cards
+                            height: 100,
+                            child: Card(
+                              child: Expanded(
+                                child: ListTile(
+                                  iconColor: Colors.orange,
+                                  titleTextStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25),
+                                  leading: Icon(
+                                    Icons.group,
+                                    size: 60,
+                                  ),
+                                  title: Text(
+                                    'Nome legalzão',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  onTap: () {},
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
