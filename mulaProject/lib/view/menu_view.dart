@@ -20,57 +20,47 @@ class _menu_view extends State<menu_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         toolbarHeight: 100,
         centerTitle: true,
         forceMaterialTransparency: true,
         backgroundColor: Colors.white,
-
         leading: Container(
-          padding: EdgeInsets.only(left: 10),
-          child: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, 'login');
-          },
-          icon: Icon(Icons.logout_outlined, color:Color(0xFFF24C3D), size: 40),
-        )),
-
+            padding: EdgeInsets.only(left: 10),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'login');
+              },
+              icon: Icon(Icons.logout_outlined,
+                  color: Color(0xFFF24C3D), size: 40),
+            )),
         title: Container(
-        
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
                 'Usuário',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xff666666)
-                ),
+                style: TextStyle(fontSize: 20, color: Color(0xff666666)),
               ),
-              Text(
-                'Bem Vindo!',
-                style: TextStyle(
-                  fontSize: 35,
-                  color: Color(0xff231E1A),
-                  fontWeight: FontWeight.bold
-                )
-              )
+              Text('Bem Vindo!',
+                  style: TextStyle(
+                      fontSize: 35,
+                      color: Color(0xff231E1A),
+                      fontWeight: FontWeight.bold))
             ],
           ),
         ),
         actions: [
           Container(
-          padding: EdgeInsets.only(right: 20),
-          child: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, 'login');
-          },
-          icon: Icon(Icons.settings, color:Color(0xFFF24C3D), size: 40),
-        )),
+              padding: EdgeInsets.only(right: 20),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'login');
+                },
+                icon: Icon(Icons.settings, color: Color(0xFFF24C3D), size: 40),
+              )),
         ],
       ),
-
       body: Padding(
         padding: EdgeInsets.all(95),
         child: Column(
