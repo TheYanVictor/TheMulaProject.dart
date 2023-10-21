@@ -62,7 +62,7 @@ class _menu_view extends State<menu_view> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(25),
+        padding: EdgeInsets.all(0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center, //NÃO MEXE (pfv)
           children: [
