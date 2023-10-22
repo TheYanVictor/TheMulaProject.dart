@@ -148,44 +148,38 @@ class _produtos_main_viewState extends State<produtos_main_view> {
             children: [
               Expanded(
                 flex: 2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      //color: Colors.black,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        //scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, list) {
-                          return Container(
-                            //esse container é só pra alterar a altura dos cards
-                            height: 100,
-                            child: Card(
-                              child: Expanded(
-                                child: ListTile(
-                                  iconColor: Colors.orange,
-                                  titleTextStyle: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25),
-                                  leading: Icon(
-                                    Icons.group,
-                                    size: 60,
-                                  ),
-                                  title: Text(
-                                    'Nome legalzão',
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  onTap: () {},
-                                ),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      //scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, list) {
+                        return Container(
+                          //esse container é só pra alterar a altura dos cards
+                          height: 100,
+                          child: Card(
+                            child: ListTile(
+                              iconColor: Colors.orange,
+                              titleTextStyle: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25),
+                              leading: Icon(
+                                Icons.group,
+                                size: 60,
                               ),
+                              title: Text(
+                                'Nome legalzão',
+                                textAlign: TextAlign.center,
+                              ),
+                              onTap: () {},
                             ),
-                          );
-                        },
-                      ),
-                    )
-                  ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ),
               ),
             ],
