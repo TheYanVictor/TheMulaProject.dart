@@ -70,6 +70,9 @@ class _produtos_main_viewState extends State<produtos_main_view> {
           Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(
+            height: 30,
+          ),
           Expanded(
             //flex é a porcentagem do espaço a ser utilizado pelo widget em relação ao compartimento pai
             flex: 1,
@@ -108,24 +111,52 @@ class _produtos_main_viewState extends State<produtos_main_view> {
               ],
             ),
           ),
-          //espaço do appbar
-          SizedBox(
-            height: 30,
-            child: Container(
-              color: Colors.amberAccent,
-            ),
-          ),
           //Primeira fileira de produtos
           Expanded(
             flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  height: 150,
-                  width: MediaQuery.of(context).size.width,
-                  color: Colors.black,
-                )
+                Expanded(
+                  flex: 2,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black12,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black26,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black38,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black45,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black54,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -133,56 +164,99 @@ class _produtos_main_viewState extends State<produtos_main_view> {
           Expanded(
             flex: 2,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  height: 150,
-                  width: MediaQuery.of(context).size.width,
-                  color: Colors.black,
-                )
+                Expanded(
+                  flex: 2,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black12,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black26,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black38,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black45,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black54,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
           //Terceira fileira de produtos
-          Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      //scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, list) {
-                        return Container(
-                          //esse container é só pra alterar a altura dos cards
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
                           height: 100,
-                          child: Card(
-                            child: ListTile(
-                              iconColor: Colors.orange,
-                              titleTextStyle: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 25),
-                              leading: Icon(
-                                Icons.group,
-                                size: 60,
-                              ),
-                              title: Text(
-                                'Nome legalzão',
-                                textAlign: TextAlign.center,
-                              ),
-                              onTap: () {},
-                            ),
-                          ),
-                        );
-                      },
+                          width: 100,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black12,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black26,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black38,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black45,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color: Colors.black54,
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
