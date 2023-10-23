@@ -93,7 +93,7 @@ class _login_viewState extends State<login_view> {
           ),
           TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'esqueceu_senha');
+                openDialog();
               },
               child: Text('Esqueceu a senha?',
                   textScaleFactor: 1.3,
@@ -162,6 +162,61 @@ class _login_viewState extends State<login_view> {
       ),
     ));
   }
-}
 
-//Oi yan
+
+  //Caixa popUp que aparece caso o usuário tenha esquecido a senha
+  Future openDialog() => showDialog(
+
+    context: context,
+
+    builder: (context) => AlertDialog(
+
+      //define o formato da caixa com as bordas mais arredondadas
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+      //titulo da caixa
+      title: Text('Esqueceu a senha?', style: TextStyle(fontWeight: FontWeight.bold),),
+
+      //conteudo da caixa - TextField
+      content: TextField(
+            decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(10),
+                    right: Radius.circular(10),
+                  ),
+                ),
+                label: Text(
+                  'Digite seu E-mail de login',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                      fontSize: 16),
+                )),
+          ),
+
+      //botão de confirmação
+      actions: [
+        OutlinedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: Text(
+              'Recuperar Senha',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.getFont('Inter'),
+            ),
+            style: OutlinedButton.styleFrom(
+              backgroundColor: Color(0xFFF24C3D),
+              foregroundColor: Color(0xFFF6F6F6),
+              minimumSize: Size(double.infinity, 50),
+              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              ),
+            ),
+        )
+      ],
+    )
+  );
+
+}
