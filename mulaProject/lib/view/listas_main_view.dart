@@ -122,6 +122,30 @@ class _listas_main_viewState extends State<listas_main_view> {
               ),
             ],
           ),
+          Expanded(
+              flex: 6,
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: ListTile(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.black, width: 1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      leading: Image(
+                          image: NetworkImage(
+                              'https://64.media.tumblr.com/8608853521e0b73bd2f143b6fb5c09cc/77f62d756529cff0-e1/s400x600/8ae71bc7af279115ca5dd5e6ebe5f07e6bdecc75.jpg')),
+                      title: Text(
+                        'Grupo',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  );
+                },
+              ))
         ],
       ),
     );
