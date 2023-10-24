@@ -15,42 +15,37 @@ class _grupos_main_viewState extends State<grupos_main_view> {
   Widget build(BuildContext context) {
     return Scaffold(
       //
-      //App Bar provisória
+      //App Bar
       //
       appBar: AppBar(
         backgroundColor: Color(0xFFF24C3D),
         toolbarHeight: 150,
         leading: BackButton(),
-        iconTheme: IconThemeData(size: 40),
-
-        //
+        iconTheme: IconThemeData(size: 40, color: Colors.white),
         // Texto e botoes do app bar
-        //
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+        title:
             //Texto central
-            //
-            Text(
-              'Grupos',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-            //
-            //Botao de home                                     falta alinhar para cima
-            //
             Container(
-              child: IconButton(
-                icon: const Icon(Icons.house),
-                iconSize: 40,
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pushNamed(context, 'main_menu');
-                },
-              ),
-            ),
-          ],
+          alignment: Alignment.center,
+          child: Text(
+            'Perfil',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
+        actions: [
+          //Botao de home                                     falta alinhar para cima
+          Container(
+            child: IconButton(
+              icon: const Icon(Icons.house),
+              iconSize: 40,
+              color: Colors.white,
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+            ),
+          ),
+        ],
       ),
 
       //

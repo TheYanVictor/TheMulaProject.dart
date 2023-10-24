@@ -15,40 +15,34 @@ class _listas_main_viewState extends State<listas_main_view> {
       //App Bar
       //
       appBar: AppBar(
-        backgroundColor: Colors.transparent, //isso
-        elevation: 0, //e isso fazem o appbar ficar invisivel - magica!
-        toolbarHeight: 100,
-        iconTheme: IconThemeData(color: Colors.black, size: 40),
+        backgroundColor: Color(0xFFF24C3D),
+        toolbarHeight: 150,
         leading: BackButton(),
-        //
+        iconTheme: IconThemeData(size: 40, color: Colors.white),
         // Texto e botoes do app bar
-        //
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            //
+        title:
             //Texto central
-            //
-            Text(
-              'Listas',
-              style: TextStyle(color: Colors.black, fontSize: 25),
-            ),
-            //
-            //Botao de home                                     falta alinhar para cima
-            //
             Container(
-              child: IconButton(
-                icon: const Icon(Icons.house),
-                iconSize: 40,
-                color: Colors.black,
-                onPressed: () {
-                  Navigator.pushNamed(context, 'main_menu');
-                },
-              ),
-            ),
-          ],
+          alignment: Alignment.center,
+          child: Text(
+            'Perfil',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
+        actions: [
+          //Botao de home                                     falta alinhar para cima
+          Container(
+            child: IconButton(
+              icon: const Icon(Icons.house),
+              iconSize: 40,
+              color: Colors.white,
+              onPressed: () {
+                Navigator.pushNamed(context, 'main_menu');
+              },
+            ),
+          ),
+        ],
       ),
 
       //
