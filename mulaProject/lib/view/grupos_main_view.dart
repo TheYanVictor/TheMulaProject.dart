@@ -20,6 +20,8 @@ class _grupos_main_viewState extends State<grupos_main_view> {
       appBar: AppBar(
         backgroundColor: Color(0xFFF24C3D),
         toolbarHeight: 150,
+        leading: BackButton(),
+        iconTheme: IconThemeData(size: 40),
 
         //
         // Texto e botoes do app bar
@@ -28,20 +30,6 @@ class _grupos_main_viewState extends State<grupos_main_view> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //
-            //Voltar para a pagina anterior                      falta alinhar para cima
-            //
-            Container(
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back),
-                iconSize: 40,
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
-            //
             //Texto central
             //
             Text(

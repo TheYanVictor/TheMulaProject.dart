@@ -18,7 +18,8 @@ class _listas_main_viewState extends State<listas_main_view> {
         backgroundColor: Colors.transparent, //isso
         elevation: 0, //e isso fazem o appbar ficar invisivel - magica!
         toolbarHeight: 100,
-
+        iconTheme: IconThemeData(color: Colors.black, size: 40),
+        leading: BackButton(),
         //
         // Texto e botoes do app bar
         //
@@ -26,19 +27,6 @@ class _listas_main_viewState extends State<listas_main_view> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //
-            //Voltar para a pagina anterior                      falta alinhar para cima
-            //
-            Container(
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back),
-                iconSize: 40,
-                color: Colors.black,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
             //
             //Texto central
             //

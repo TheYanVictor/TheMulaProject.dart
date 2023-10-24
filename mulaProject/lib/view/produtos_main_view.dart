@@ -20,27 +20,15 @@ class _produtos_main_viewState extends State<produtos_main_view> {
       appBar: AppBar(
         backgroundColor: Color(0xFFF24C3D),
         toolbarHeight: 150,
-
+        leading: BackButton(),
+        iconTheme: IconThemeData(size: 40),
         //
         // Texto e botoes do app bar
         //
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //
-            //Voltar para a pagina anterior                      falta alinhar para cima
-            //
-            Container(
-              child: IconButton(
-                icon: const Icon(Icons.arrow_back),
-                iconSize: 40,
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
             //
             //Texto central
             //
