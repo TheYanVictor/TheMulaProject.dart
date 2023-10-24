@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:trabalho_01/view/criar_cadastro.dart';
@@ -11,6 +13,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:trabalho_01/view/perfil_main_view.dart';
 import 'package:trabalho_01/view/produtos_main_view.dart';
 
+class MyCustomBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.stylus,
+        PointerDeviceKind.unknown,
+      };
+}
+
 void main() {
   runApp(
     DevicePreview(
@@ -18,6 +30,7 @@ void main() {
       builder: (context) => MaterialApp(
           useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: true,
+          scrollBehavior: MyCustomBehavior(),
 
           //rotas de navegação
           initialRoute: 'login',

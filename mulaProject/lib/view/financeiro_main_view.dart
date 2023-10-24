@@ -70,37 +70,120 @@ class _financeiro_main_view extends State<financeiro_main_view> {
       body: Column(
         //alinhamento da coluna principal
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           // Area dos cartoes
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                //color: Colors.black,
-                width: 200,
-                height: 150,
-                child: ListView.builder(
-                  itemCount: 4,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, position) {
-                    return Card(
-                      color: Colors.amberAccent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: SizedBox(
-                        width: 200,
-                        child: Text(
-                          'Card',
-                          style: TextStyle(fontSize: 20),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    );
-                  },
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Cartao 1
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(width: 20),
+                //Cartao 2
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                //Cartao 3
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                //Cartao 4
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                //Cartao 5
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                //Cartao 6
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                //Cartao 7
+                Container(
+                  height: 150,
+                  width: 200,
+                  //color: Colors.amberAccent,
+                  //Aredondado
+                  decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(20),
+                      left: Radius.circular(20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           //row do financeiro
           //Frase
