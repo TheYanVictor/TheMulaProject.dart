@@ -139,14 +139,7 @@ class _menu_view extends State<menu_view> {
                                   },
                                 )
                                 
-                                /*IconButton(
-                                  icon: const Icon(Icons.person),
-                                  iconSize: 60,
-                                  color: Color(0xFF292D32),
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, 'perfil');
-                                  },
-                                ),*/
+                                
                               ),
                             ],
                           ),
@@ -212,14 +205,7 @@ class _menu_view extends State<menu_view> {
                                   onPressed: () {
                                      Navigator.pushNamed(context, 'produtos');
                                   },
-                                )/*IconButton(
-                                      icon: const Icon(Icons.local_mall),
-                                      iconSize: 60,
-                                      color: Color(0xFF292D32),
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'produtos');
-                                      },
-                                    ),*/
+                                )
                                   ),
                                 ],
                               ),
@@ -283,14 +269,7 @@ class _menu_view extends State<menu_view> {
                                      Navigator.pushNamed(context, 'listas');
                                   },
                                 )
-                                    /*IconButton(
-                                      icon: const Icon(Icons.list),
-                                      iconSize: 60,
-                                      color: Color(0xFF292D32),
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'listas');
-                                      },
-                                    ),*/
+                                    
                                   ),
                                 ],
                               ),
@@ -359,14 +338,7 @@ class _menu_view extends State<menu_view> {
                                      Navigator.pushNamed(context, 'grupos');
                                   },
                                 )
-                                    /* IconButton(
-                                      icon: const Icon(Icons.chat),
-                                      iconSize: 60,
-                                      color: Color(0xFF292D32),
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'grupos');
-                                      },
-                                    ),*/
+                                    
                                   ),
                                   //Botao Lista
                                   Container(),
@@ -432,19 +404,27 @@ class _menu_view extends State<menu_view> {
                                      Navigator.pushNamed(context, 'financeiro');
                                   },
                                 )
-                                /*IconButton(
-                                      icon: const Icon(Icons.account_balance),
-                                      iconSize: 60,
-                                      color: Color(0xFF292D32),
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'financeiro');
-                                      },
-                                    ),*/
+                                
                                   ),
                                 ],
                               ),
                             ],
                           ),
+
+                          SizedBox(height: 45),
+
+                          IconButton(
+                            iconSize: 45,
+                            icon: Icon(
+                              Icons.info_outline_rounded,
+                              size: 45,
+                              color: Color(0xFFF24C3D),
+                            ),
+
+                            onPressed: () {
+                              OpenDialog();
+                            },
+                          )
                         ],
                       ),
                     ),
@@ -457,4 +437,31 @@ class _menu_view extends State<menu_view> {
       ),
     );
   }
+
+  Future OpenDialog() => showDialog(
+
+    context: context,
+    builder: (context) => AlertDialog(
+
+      
+      //define se será possivel rolar a tela da caixa
+      scrollable: true,
+      //define o formato da caixa com as bordas mais arredondadas
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+      //titulo da caixa
+      title: Text('SOBRE', style: TextStyle(fontWeight: FontWeight.bold),),
+
+      //conteudo da caixa - TextField
+      content: Container(
+        width: 300,
+        child: Text(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut nisi vehicula, vehicula nisi ac, vulputate diam. Nam lorem dolor, vulputate nec efficitur ut, ultricies facilisis tortor. Duis nec lectus ut ligula vestibulum consectetur. Mauris tristique sagittis egestas. Curabitur quis efficitur tellus, id pulvinar enim. Morbi interdum arcu eu massa bibendum, eu mollis quam condimentum. Etiam quis imperdiet risus, ac volutpat lectus. Pellentesque porttitor egestas efficitur. Proin rutrum eros eu sem auctor, suscipit blandit sem sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sit amet est non mi interdum interdum nec ac tellus.",
+          style: TextStyle(
+            fontSize: 20
+          ),
+        ),
+      )
+    )
+  );
+
 }
