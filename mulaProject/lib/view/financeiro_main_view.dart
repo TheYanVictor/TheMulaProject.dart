@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class financeiro_main_view extends StatefulWidget {
   const financeiro_main_view({super.key});
@@ -77,6 +78,69 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 30,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              color: Colors.blue,
+                            ),
+                            Container(
+                              height: 20,
+                              width: 30,
+                              color: Colors.deepPurple,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
