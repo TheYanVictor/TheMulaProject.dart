@@ -1,6 +1,8 @@
 //Definindo a classe
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -110,9 +112,12 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                         child: Row(
                           children: [
                             Container(
-                              width: 140,
+                              width: 200,
                               height: 20,
-                              color: Colors.black,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
                             ),
                           ],
                         ),
@@ -126,12 +131,18 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                             Container(
                               width: 140,
                               height: 20,
-                              color: Colors.blue,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Container(
-                              height: 20,
+                              height: 30,
                               width: 30,
-                              color: Colors.deepPurple,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
                             ),
                           ],
                         ),
@@ -281,12 +292,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.pix),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -323,12 +332,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.attach_money_rounded),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -374,9 +381,7 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                       icon: const Icon(Icons.card_giftcard),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -413,12 +418,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.library_books),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
