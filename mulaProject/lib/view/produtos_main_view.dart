@@ -28,8 +28,8 @@ class _produtos_main_viewState extends State<produtos_main_view> {
             Container(
           alignment: Alignment.center,
           child: Text(
-            'Perfil',
-            style: TextStyle(color: Colors.white),
+            'Produtos',
+            style: TextStyle(color: Colors.white, fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),

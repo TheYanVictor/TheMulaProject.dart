@@ -30,8 +30,8 @@ class _financeiro_main_view extends State<financeiro_main_view> {
             Container(
           alignment: Alignment.center,
           child: Text(
-            'Perfil',
-            style: TextStyle(color: Colors.white),
+            'Finanças',
+            style: TextStyle(color: Colors.white, fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:trabalho_01/view/configuracoes_view.dart';
 import 'package:trabalho_01/view/criar_cadastro.dart';
 import 'package:trabalho_01/view/esqueceu_senha.dart';
 import 'package:trabalho_01/view/financeiro_main_view.dart';
@@ -49,6 +50,7 @@ void main() {
             'esqueceu_senha': (context) => esqueceuSenha(),
             'criar_cadastro': (context) => criarCadastrp(),
             'produtos': (context) => produtos_main_view(),
+            'configuracoes': (context) =>configuracoes_view(),
           }),
     ),
   );

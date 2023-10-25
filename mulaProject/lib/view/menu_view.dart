@@ -55,7 +55,7 @@ class _menu_view extends State<menu_view> {
               padding: EdgeInsets.only(right: 20),
               child: IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'login');
+                  Navigator.pushNamed(context, 'configuracoes');
                 },
                 icon: Icon(Icons.settings, color: Color(0xFFF24C3D), size: 40),
               )),
@@ -80,71 +80,70 @@ class _menu_view extends State<menu_view> {
                         crossAxisAlignment:
                             CrossAxisAlignment.center, //muda o icone perfil
                         children: [
-                    
                           Stack(
                             //posicao
                             alignment: AlignmentDirectional.center,
-                            
+
                             children: [
                               //botao unico
                               Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                                  border:
-                                      //borda esquerda
-                                      Border(
-                                    left: BorderSide(
-                                      color: Color(0xFFF24C3D),
-                                      width: 5,
-                                    ),
-                                    //borda direita
-                                    right: BorderSide(
-                                      color: Color(0xFFF24C3D),
-                                      width: 5,
-                                    ),
-                                    top: BorderSide(
-                                      color: Color(0xFFF24C3D),
-                                      width: 5,
-                                    ),
-                                    bottom: BorderSide(
-                                      color: Color(0xFFF24C3D),
-                                      width: 5,
-                                    ),
-                                  ),
-                                ),
-                                width: 320,
-                                height: 150,
-                                //icone
-                                child: OutlinedButton(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        size: 80,
-                                        color: Color(0xFF292D32),
+                                  decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(30)),
+                                    border:
+                                        //borda esquerda
+                                        Border(
+                                      left: BorderSide(
+                                        color: Color(0xFFF24C3D),
+                                        width: 5,
                                       ),
-                                      Text(
-                                        'Perfil',
-                                        style: GoogleFonts.roboto(
-                                          fontSize: 25,
-                                          color: Color(0xFF292D32),
-                                          fontWeight: FontWeight.bold
-                                        ),
-                                      )
-                                    ],
+                                      //borda direita
+                                      right: BorderSide(
+                                        color: Color(0xFFF24C3D),
+                                        width: 5,
+                                      ),
+                                      top: BorderSide(
+                                        color: Color(0xFFF24C3D),
+                                        width: 5,
+                                      ),
+                                      bottom: BorderSide(
+                                        color: Color(0xFFF24C3D),
+                                        width: 5,
+                                      ),
+                                    ),
                                   ),
-                                  onPressed: () {
-                                     Navigator.pushNamed(context, 'perfil');
-                                  },
-                                )
-                                
-                                
-                              ),
+                                  width: 320,
+                                  height: 150,
+                                  //icone
+                                  child: OutlinedButton(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.person,
+                                          size: 80,
+                                          color: Color(0xFF292D32),
+                                        ),
+                                        Text(
+                                          'Perfil',
+                                          style: GoogleFonts.roboto(
+                                              fontSize: 25,
+                                              color: Color(0xFF292D32),
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ],
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, 'perfil');
+                                    },
+                                  )),
                             ],
                           ),
-                          SizedBox(height: 20,),
-                    
+                          SizedBox(
+                            height: 20,
+                          ),
+
                           //Segunda linha - 2 icones
                           Row(
                             //parametros da row
@@ -156,62 +155,63 @@ class _menu_view extends State<menu_view> {
                                 children: [
                                   //Botao - PRODUTOS
                                   Container(
-                                    decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                                      border:
-                                          //borda esquerda
-                                          Border(
-                                        left: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        //borda direita
-                                        right: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        top: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        bottom: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30)),
+                                        border:
+                                            //borda esquerda
+                                            Border(
+                                          left: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          //borda direita
+                                          right: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          top: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    width: 150,
-                                    height: 150,
-                                    //Icone
-                                    child: OutlinedButton(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.local_mall,
-                                        size: 80,
-                                        color: Color(0xFF292D32),
-                                      ),
-                                      Text(
-                                        'Produtos',
-                                        style: GoogleFonts.roboto(
-                                          fontSize: 25,
-                                          color: Color(0xFF292D32),
-                                          fontWeight: FontWeight.bold
+                                      width: 150,
+                                      height: 150,
+                                      //Icone
+                                      child: OutlinedButton(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.local_mall,
+                                              size: 80,
+                                              color: Color(0xFF292D32),
+                                            ),
+                                            Text(
+                                              'Produtos',
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 25,
+                                                  color: Color(0xFF292D32),
+                                                  fontWeight: FontWeight.bold),
+                                            )
+                                          ],
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                     Navigator.pushNamed(context, 'produtos');
-                                  },
-                                )
-                                  ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, 'produtos');
+                                        },
+                                      )),
                                 ],
                               ),
-                              
-                              SizedBox(width: 20,),
-
+                              SizedBox(
+                                width: 20,
+                              ),
                               Stack(
                                 //posicao
                                 alignment: AlignmentDirectional.center,
@@ -219,64 +219,66 @@ class _menu_view extends State<menu_view> {
                                   //segundp botao
                                   //externo
                                   Container(
-                                    decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                                      border:
-                                          //borda esquerda
-                                          Border(
-                                        left: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        //borda direita
-                                        right: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        top: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        bottom: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30)),
+                                        border:
+                                            //borda esquerda
+                                            Border(
+                                          left: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          //borda direita
+                                          right: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          top: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    width: 150,
-                                    height: 150,
-                                    //icones
-                                    child: OutlinedButton(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.list,
-                                        size: 80,
-                                        color: Color(0xFF292D32),
-                                      ),
-                                      Text(
-                                        'Listas',
-                                        style: GoogleFonts.roboto(
-                                          fontSize: 25,
-                                          color: Color(0xFF292D32),
-                                          fontWeight: FontWeight.bold
+                                      width: 150,
+                                      height: 150,
+                                      //icones
+                                      child: OutlinedButton(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.list,
+                                              size: 80,
+                                              color: Color(0xFF292D32),
+                                            ),
+                                            Text(
+                                              'Listas',
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 25,
+                                                  color: Color(0xFF292D32),
+                                                  fontWeight: FontWeight.bold),
+                                            )
+                                          ],
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                     Navigator.pushNamed(context, 'listas');
-                                  },
-                                )
-                                    
-                                  ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, 'listas');
+                                        },
+                                      )),
                                 ],
                               ),
                             ],
                           ),
                           //segunda coluna - icone de perfil
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           //terceira linha - 2 icones
                           Row(
                             //parametros da row
@@ -288,65 +290,65 @@ class _menu_view extends State<menu_view> {
                                 children: [
                                   //Botao - Saldo
                                   Container(
-                                    decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                                      border:
-                                          //borda esquerda
-                                          Border(
-                                        left: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        //borda direita
-                                        right: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        top: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        bottom: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30)),
+                                        border:
+                                            //borda esquerda
+                                            Border(
+                                          left: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          //borda direita
+                                          right: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          top: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    width: 150,
-                                    height: 150,
-                                    //icone
-                                    child: OutlinedButton(
-                                    child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.chat,
-                                        size: 80,
-                                        color: Color(0xFF292D32),
-                                      ),
-                                      Text(
-                                        'Grupos',
-                                        style: GoogleFonts.roboto(
-                                          fontSize: 25,
-                                          color: Color(0xFF292D32),
-                                          fontWeight: FontWeight.bold
+                                      width: 150,
+                                      height: 150,
+                                      //icone
+                                      child: OutlinedButton(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.chat,
+                                              size: 80,
+                                              color: Color(0xFF292D32),
+                                            ),
+                                            Text(
+                                              'Grupos',
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 25,
+                                                  color: Color(0xFF292D32),
+                                                  fontWeight: FontWeight.bold),
+                                            )
+                                          ],
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                     Navigator.pushNamed(context, 'grupos');
-                                  },
-                                )
-                                    
-                                  ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, 'grupos');
+                                        },
+                                      )),
                                   //Botao Lista
                                   Container(),
                                 ],
                               ),
-
-                              SizedBox(width: 20,),
-
+                              SizedBox(
+                                width: 20,
+                              ),
                               Stack(
                                 //posicao
                                 alignment: AlignmentDirectional.center,
@@ -354,58 +356,58 @@ class _menu_view extends State<menu_view> {
                                   //segundp botao
                                   //externo
                                   Container(
-                                    decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                                      border:
-                                          //borda esquerda
-                                          Border(
-                                        left: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        //borda direita
-                                        right: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        top: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
-                                        ),
-                                        bottom: BorderSide(
-                                          color: Color(0xFFF24C3D),
-                                          width: 5,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30)),
+                                        border:
+                                            //borda esquerda
+                                            Border(
+                                          left: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          //borda direita
+                                          right: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          top: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
+                                          bottom: BorderSide(
+                                            color: Color(0xFFF24C3D),
+                                            width: 5,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    width: 150,
-                                    height: 150,
-                                    //icone
-                                    child: OutlinedButton(
-                                    child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.account_balance,
-                                        size: 80,
-                                        color: Color(0xFF292D32),
-                                      ),
-                                      Text(
-                                        'Finanças',
-                                        style: GoogleFonts.roboto(
-                                          fontSize: 25,
-                                          color: Color(0xFF292D32),
-                                          fontWeight: FontWeight.bold
+                                      width: 150,
+                                      height: 150,
+                                      //icone
+                                      child: OutlinedButton(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.account_balance,
+                                              size: 80,
+                                              color: Color(0xFF292D32),
+                                            ),
+                                            Text(
+                                              'Finanças',
+                                              style: GoogleFonts.roboto(
+                                                  fontSize: 25,
+                                                  color: Color(0xFF292D32),
+                                                  fontWeight: FontWeight.bold),
+                                            )
+                                          ],
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                     Navigator.pushNamed(context, 'financeiro');
-                                  },
-                                )
-                                
-                                  ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, 'financeiro');
+                                        },
+                                      )),
                                 ],
                               ),
                             ],
@@ -420,7 +422,6 @@ class _menu_view extends State<menu_view> {
                               size: 45,
                               color: Color(0xFFF24C3D),
                             ),
-
                             onPressed: () {
                               OpenDialog();
                             },
@@ -439,29 +440,26 @@ class _menu_view extends State<menu_view> {
   }
 
   Future OpenDialog() => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
 
-    context: context,
-    builder: (context) => AlertDialog(
-
-      
-      //define se será possivel rolar a tela da caixa
-      scrollable: true,
-      //define o formato da caixa com as bordas mais arredondadas
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
-      //titulo da caixa
-      title: Text('SOBRE', style: TextStyle(fontWeight: FontWeight.bold),),
-
-      //conteudo da caixa - TextField
-      content: Container(
-        width: 300,
-        child: Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut nisi vehicula, vehicula nisi ac, vulputate diam. Nam lorem dolor, vulputate nec efficitur ut, ultricies facilisis tortor. Duis nec lectus ut ligula vestibulum consectetur. Mauris tristique sagittis egestas. Curabitur quis efficitur tellus, id pulvinar enim. Morbi interdum arcu eu massa bibendum, eu mollis quam condimentum. Etiam quis imperdiet risus, ac volutpat lectus. Pellentesque porttitor egestas efficitur. Proin rutrum eros eu sem auctor, suscipit blandit sem sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sit amet est non mi interdum interdum nec ac tellus.",
-          style: TextStyle(
-            fontSize: 20
+          //define se será possivel rolar a tela da caixa
+          scrollable: true,
+          //define o formato da caixa com as bordas mais arredondadas
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20))),
+          //titulo da caixa
+          title: Text(
+            'SOBRE',
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-        ),
-      )
-    )
-  );
 
+          //conteudo da caixa - TextField
+          content: Container(
+            width: 300,
+            child: Text(
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut nisi vehicula, vehicula nisi ac, vulputate diam. Nam lorem dolor, vulputate nec efficitur ut, ultricies facilisis tortor. Duis nec lectus ut ligula vestibulum consectetur. Mauris tristique sagittis egestas. Curabitur quis efficitur tellus, id pulvinar enim. Morbi interdum arcu eu massa bibendum, eu mollis quam condimentum. Etiam quis imperdiet risus, ac volutpat lectus. Pellentesque porttitor egestas efficitur. Proin rutrum eros eu sem auctor, suscipit blandit sem sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sit amet est non mi interdum interdum nec ac tellus.",
+              style: TextStyle(fontSize: 20),
+            ),
+          )));
 }

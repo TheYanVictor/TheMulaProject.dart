@@ -28,8 +28,8 @@ class _grupos_main_viewState extends State<grupos_main_view> {
             Container(
           alignment: Alignment.center,
           child: Text(
-            'Perfil',
-            style: TextStyle(color: Colors.white),
+            'Grupos',
+            style: TextStyle(color: Colors.white, fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),

@@ -26,7 +26,7 @@ class _perfil_main_viewState extends State<perfil_main_view> {
           alignment: Alignment.center,
           child: Text(
             'Perfil',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontSize: 30),
             textAlign: TextAlign.center,
           ),
         ),
@@ -44,6 +44,7 @@ class _perfil_main_viewState extends State<perfil_main_view> {
           ),
         ],
       ),
+//---------------------------------------------------------------------
       body: Padding(
         padding: EdgeInsets.all(10),
         child: Column(
