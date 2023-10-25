@@ -447,7 +447,7 @@ class _menu_view extends State<menu_view> {
           scrollable: true,
           //define o formato da caixa com as bordas mais arredondadas
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20))),
+              borderRadius: BorderRadius.all(Radius.circular(30))),
           //titulo da caixa
           title: Text(
             'SOBRE',
@@ -456,10 +456,27 @@ class _menu_view extends State<menu_view> {
 
           //conteudo da caixa - TextField
           content: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             width: 300,
-            child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut nisi vehicula, vehicula nisi ac, vulputate diam. Nam lorem dolor, vulputate nec efficitur ut, ultricies facilisis tortor. Duis nec lectus ut ligula vestibulum consectetur. Mauris tristique sagittis egestas. Curabitur quis efficitur tellus, id pulvinar enim. Morbi interdum arcu eu massa bibendum, eu mollis quam condimentum. Etiam quis imperdiet risus, ac volutpat lectus. Pellentesque porttitor egestas efficitur. Proin rutrum eros eu sem auctor, suscipit blandit sem sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sit amet est non mi interdum interdum nec ac tellus.",
-              style: TextStyle(fontSize: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              border: Border.all(color: Color(0xFFF24C3D), width: 3)
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "Mula é um aplicativo que permite a criação, acompanhamento e gerenciamento de compras conjuntas em supermercados, com o foco em adquirir descontos com grandes pedidos.",
+                  style: GoogleFonts.roboto(fontSize: 21, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start, 
+                ),
+                /*SizedBox(height: 25),
+                Text(
+                  "Este é o menu principal, nele é possível ver e editar o seu perfil, acompanhar os produtos disponíveis no mercado, revisar suas listas de compras atuais, acompanhar os grupos de compras que você participa e acessar informações financeiras.",
+                  style: GoogleFonts.roboto(fontSize: 21, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
+                ),*/
+              ],
             ),
           )));
 }

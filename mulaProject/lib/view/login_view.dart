@@ -17,6 +17,7 @@ class login_view extends StatefulWidget {
 class _login_viewState extends State<login_view> {
   //estado da senha
   bool senhaInvisivel = true;
+  String email = "";
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,15 @@ class _login_viewState extends State<login_view> {
             height: 100,
           ),
           TextField(
+            onSubmitted: (value) {
+              if(value == ''){
+                //avisar q deu merda
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('O e-mail deve ser válido')));
+              }else{
+                //ser feliz
+              }
+            },
+            controller: TextEditingController(text: email),
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.horizontal(
@@ -55,6 +65,14 @@ class _login_viewState extends State<login_view> {
             height: 20,
           ),
           TextField(
+            onSubmitted: (value) {
+              if(value == ''){
+                //avisar q deu merda
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('A senha deve ser válida')));
+              }else{
+                //ser feliz
+              }
+            },
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.horizontal(
@@ -219,4 +237,7 @@ class _login_viewState extends State<login_view> {
     )
   );
 
+  
+
 }
+
