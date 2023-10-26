@@ -17,7 +17,8 @@ class login_view extends StatefulWidget {
 class _login_viewState extends State<login_view> {
   //estado da senha
   bool senhaInvisivel = true;
-  String email = "";
+  var email = TextEditingController();
+  var senha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +38,8 @@ class _login_viewState extends State<login_view> {
             height: 100,
           ),
           TextField(
-            onSubmitted: (value) {
-              if(value == ''){
-                //avisar q deu merda
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('O e-mail deve ser válido')));
-              }else{
-                //ser feliz
-              }
-            },
-            controller: TextEditingController(text: email),
+           
+            controller: email,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.horizontal(
@@ -65,14 +59,8 @@ class _login_viewState extends State<login_view> {
             height: 20,
           ),
           TextField(
-            onSubmitted: (value) {
-              if(value == ''){
-                //avisar q deu merda
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('A senha deve ser válida')));
-              }else{
-                //ser feliz
-              }
-            },
+            controller: senha,
+            
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.horizontal(
@@ -123,11 +111,29 @@ class _login_viewState extends State<login_view> {
           ),
           OutlinedButton(
             onPressed: () {
-              Navigator.pushNamed(
+              var txtEmail;
+              var txtSenha;
+
+              setState(() {
+                txtEmail = email.text;
+                txtSenha = senha.text;
+              });
+
+              if(txtEmail == ''){
+                //avisar q deu errado
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('O e-mail deve ser válido')));
+              }else if(txtSenha == ''){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('A senha deve ser válida')));
+
+              }else{
+                //ser feliz
+                Navigator.pushNamed(
                 context,
                 'main_menu',
               );
+              }
             },
+
             child: Text(
               'Entrar',
               textAlign: TextAlign.center,
