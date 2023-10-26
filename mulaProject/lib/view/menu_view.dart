@@ -459,16 +459,16 @@ class _menu_view extends State<menu_view> {
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             width: 300,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              border: Border.all(color: Color(0xFFF24C3D), width: 3)
-            ),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                border: Border.all(color: Color(0xFFF24C3D), width: 3)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Mula é um aplicativo que permite a criação, acompanhamento e gerenciamento de compras conjuntas em supermercados, com o foco em adquirir descontos com grandes pedidos.",
-                  style: GoogleFonts.roboto(fontSize: 21, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.start, 
+                  "Mula é um aplicativo que permite a criação, acompanhamento e gerenciamento de compras conjuntas em supermercados, com o foco em adquirir descontos com grandes pedidos.\n\nBy: Lucas Augusto & Yan Victor",
+                  style: GoogleFonts.roboto(
+                      fontSize: 21, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
                 ),
                 /*SizedBox(height: 25),
                 Text(
