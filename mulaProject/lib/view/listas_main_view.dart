@@ -11,9 +11,7 @@ class _listas_main_viewState extends State<listas_main_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //
       //App Bar
-      //
       appBar: AppBar(
         backgroundColor: Color(0xFFF24C3D),
         toolbarHeight: 150,
@@ -31,7 +29,7 @@ class _listas_main_viewState extends State<listas_main_view> {
           ),
         ),
         actions: [
-          //Botao de home                                     falta alinhar para cima
+          //Botao de home
           Container(
             child: IconButton(
               icon: const Icon(Icons.house),
@@ -44,10 +42,7 @@ class _listas_main_viewState extends State<listas_main_view> {
           ),
         ],
       ),
-
-      //
-      //Main Body
-      //
+//---------------------------------------------------------------------------------------------------
       body:
           //      Campo de procura
           Column(
@@ -91,7 +86,6 @@ class _listas_main_viewState extends State<listas_main_view> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                //color: Colors.black,
                 height: 70,
                 width: MediaQuery.of(context)
                     .size

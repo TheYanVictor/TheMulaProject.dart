@@ -1,11 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/navigator.dart';
-import 'package:trabalho_01/main.dart';
 
 // Creating the main menu view
 
@@ -440,12 +437,11 @@ class _menu_view extends State<menu_view> {
   }
 
   Future OpenDialog() => showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-
-          //define se será possivel rolar a tela da caixa
+        context: context,
+        builder: (context) => AlertDialog(
+          //Define se será possivel rolar a tela da caixa
           scrollable: true,
-          //define o formato da caixa com as bordas mais arredondadas
+          //Define o formato da caixa com as bordas mais arredondadas
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30))),
           //titulo da caixa
@@ -470,13 +466,9 @@ class _menu_view extends State<menu_view> {
                       fontSize: 21, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.start,
                 ),
-                /*SizedBox(height: 25),
-                Text(
-                  "Este é o menu principal, nele é possível ver e editar o seu perfil, acompanhar os produtos disponíveis no mercado, revisar suas listas de compras atuais, acompanhar os grupos de compras que você participa e acessar informações financeiras.",
-                  style: GoogleFonts.roboto(fontSize: 21, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.start,
-                ),*/
               ],
             ),
-          )));
+          ),
+        ),
+      );
 }

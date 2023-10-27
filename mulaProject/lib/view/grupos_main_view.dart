@@ -34,7 +34,7 @@ class _grupos_main_viewState extends State<grupos_main_view> {
           ),
         ),
         actions: [
-          //Botao de home                                     falta alinhar para cima
+          //Botao de home
           Container(
             child: IconButton(
               icon: const Icon(Icons.house),
@@ -47,13 +47,8 @@ class _grupos_main_viewState extends State<grupos_main_view> {
           ),
         ],
       ),
-
-      //
-      //Acho que aqui vai ter que ser parecido com lista que o Plotze mostrou
-      //
-
+//-----------------------------------------------------------------
       body:
-
           //Coluna que vai organizar toda a tela
           Column(
         //alinhamento
