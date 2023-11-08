@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 
 class listas_main_view extends StatefulWidget {
@@ -44,7 +46,7 @@ class _listas_main_viewState extends State<listas_main_view> {
       ),
 //---------------------------------------------------------------------------------------------------
       body:
-          //      Campo de procura
+          //Campo de procura
           Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

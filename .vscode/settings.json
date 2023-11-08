@@ -8,5 +8,9 @@
     "workbench.colorTheme": "Default High Contrast",
     "workbench.tree.renderIndentGuides": "onHover",
     "workbench.statusBar.visible": true,
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "editor.semanticHighlighting.enabled": "configuredByTheme",
+    "editor.occurrencesHighlight": true,
+    "editor.foldingHighlight": true,
+    "workbench.editor.enablePreview": true
 }
