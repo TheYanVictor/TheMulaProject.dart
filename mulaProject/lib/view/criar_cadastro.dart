@@ -16,6 +16,7 @@ class _criarCadastrpState extends State<criarCadastrp> {
 
   //senha visivel
     bool senhaInvisivel = true;
+    bool senhaInvisivel2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +132,44 @@ class _criarCadastrpState extends State<criarCadastrp> {
                           padding: EdgeInsets.zero,
                         ))),
                 obscureText: senhaInvisivel,
+              ),
+
+              SizedBox(height: 20),
+
+              TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.horizontal(
+                            left: Radius.circular(10), right: Radius.circular(10))),
+                    label: Text(
+                      'Repetir Senha',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 16),
+                    ),
+                    suffix: TextButton(
+                        
+                        child: Text(
+                          'Ver   ', //ignora a gambiarra
+                          style: TextStyle(
+                            color: Color(0xFFF24C3D),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: () {
+                          bool estado = senhaInvisivel2;
+                          //funcionalidade de "desobscurecer" o texto do textField
+                          setState(() {
+                            senhaInvisivel2 = !estado;
+                          });
+                          
+                        },
+                        style: TextButton.styleFrom(
+                          minimumSize: Size.zero,
+                          padding: EdgeInsets.zero,
+                        ))),
+                obscureText: senhaInvisivel2,
               ),
 
               SizedBox(height: 25),

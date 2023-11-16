@@ -69,7 +69,7 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
@@ -94,10 +94,11 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                             //icone do wifi
                             Container(
                               child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
                                 angle: 90 * pi / 180,
                                 child: Icon(
                                   Icons.wifi,
-                                  size: 30,
+                                  size: 26,
                                 ),
                               ),
                             ),
@@ -110,9 +111,12 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                         child: Row(
                           children: [
                             Container(
-                              width: 140,
+                              width: 200,
                               height: 20,
-                              color: Colors.black,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
                             ),
                           ],
                         ),
@@ -126,12 +130,18 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                             Container(
                               width: 140,
                               height: 20,
-                              color: Colors.blue,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Container(
-                              height: 20,
+                              height: 30,
                               width: 30,
-                              color: Colors.deepPurple,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
                             ),
                           ],
                         ),
@@ -147,11 +157,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
@@ -162,11 +245,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
@@ -177,11 +333,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
@@ -192,11 +421,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
@@ -207,11 +509,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(width: 20),
@@ -222,11 +597,84 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                   //color: Colors.amberAccent,
                   //Aredondado
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color.fromARGB(223, 227, 101, 17),
                     borderRadius: BorderRadius.horizontal(
                       right: Radius.circular(20),
                       left: Radius.circular(20),
                     ),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //icone do cartao
+                            Container(
+                              alignment: Alignment.topCenter,
+                              child: Icon(
+                                Icons.credit_card,
+                                size: 50,
+                              ),
+                            ),
+                            //icone do wifi
+                            Container(
+                              child: Transform.rotate(
+                                alignment: Alignment.bottomCenter,
+                                angle: 90 * pi / 180,
+                                child: Icon(
+                                  Icons.wifi,
+                                  size: 26,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Numeros
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 200,
+                              height: 20,
+                              child: Text(
+                                '**** **** *** 4567',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //nome
+                      Expanded(
+                        flex: 2,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 20,
+                              child: Text(
+                                'Lucas Augusto',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              child: Icon(
+                                Icons.join_full_outlined,
+                                size: 25,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -281,12 +729,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.pix),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -323,12 +769,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.attach_money_rounded),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -374,9 +818,7 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                       icon: const Icon(Icons.card_giftcard),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -413,12 +855,10 @@ class _financeiro_main_view extends State<financeiro_main_view> {
                     height: 100,
                     //Icone
                     child: IconButton(
-                      icon: const Icon(Icons.card_giftcard),
+                      icon: const Icon(Icons.library_books),
                       iconSize: 60,
                       color: Color(0xFF292D32),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'produtos');
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],

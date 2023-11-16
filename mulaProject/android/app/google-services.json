@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "930226561299",
+    "project_id": "mula-project",
+    "storage_bucket": "mula-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930226561299:android:ca632e0587d27056087ae6",
+        "android_client_info": {
+          "package_name": "com.example.trabalho_01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApHulRZFaGYS4LJAjVEyBlSAw1b8l4eKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
