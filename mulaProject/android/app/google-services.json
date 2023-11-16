@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "930226561299",
-    "project_id": "mula-project",
-    "storage_bucket": "mula-project.appspot.com"
+    "project_number": "624649604158",
+    "project_id": "themula-project",
+    "storage_bucket": "themula-project.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:930226561299:android:ca632e0587d27056087ae6",
+        "mobilesdk_app_id": "1:624649604158:android:6cad3bfa1624c35be2956f",
         "android_client_info": {
           "package_name": "com.example.trabalho_01"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyApHulRZFaGYS4LJAjVEyBlSAw1b8l4eKA"
+          "current_key": "AIzaSyBWEshLku_gMf6vHPhe5TK6ndnR_734a1U"
         }
       ],
       "services": {

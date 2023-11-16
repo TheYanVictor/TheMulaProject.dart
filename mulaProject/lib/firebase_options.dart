@@ -44,37 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAMEolJzsBAr30y6OfZXMs1U9hB7ybaYco',
-    appId: '1:930226561299:web:c9a89e017077caa7087ae6',
-    messagingSenderId: '930226561299',
-    projectId: 'mula-project',
-    authDomain: 'mula-project.firebaseapp.com',
-    storageBucket: 'mula-project.appspot.com',
+    apiKey: 'AIzaSyB3EhsTORv6J5GgQGsBR1NSQnpQbvDvEn4',
+    appId: '1:624649604158:web:0c6e71a67178fe75e2956f',
+    messagingSenderId: '624649604158',
+    projectId: 'themula-project',
+    authDomain: 'themula-project.firebaseapp.com',
+    storageBucket: 'themula-project.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyApHulRZFaGYS4LJAjVEyBlSAw1b8l4eKA',
-    appId: '1:930226561299:android:ca632e0587d27056087ae6',
-    messagingSenderId: '930226561299',
-    projectId: 'mula-project',
-    storageBucket: 'mula-project.appspot.com',
+    apiKey: 'AIzaSyBWEshLku_gMf6vHPhe5TK6ndnR_734a1U',
+    appId: '1:624649604158:android:6cad3bfa1624c35be2956f',
+    messagingSenderId: '624649604158',
+    projectId: 'themula-project',
+    storageBucket: 'themula-project.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCZnVLnPwcwbgI16ThfYuItMVEi2yp9gpI',
-    appId: '1:930226561299:ios:f9f52a127a8b9750087ae6',
-    messagingSenderId: '930226561299',
-    projectId: 'mula-project',
-    storageBucket: 'mula-project.appspot.com',
+    apiKey: 'AIzaSyAeUIMIVy_I3qVXrV6oNpdBrROq9FgKwzQ',
+    appId: '1:624649604158:ios:86bfacae8051933ae2956f',
+    messagingSenderId: '624649604158',
+    projectId: 'themula-project',
+    storageBucket: 'themula-project.appspot.com',
     iosBundleId: 'com.example.trabalho01',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCZnVLnPwcwbgI16ThfYuItMVEi2yp9gpI',
-    appId: '1:930226561299:ios:1e760750eebaa748087ae6',
-    messagingSenderId: '930226561299',
-    projectId: 'mula-project',
-    storageBucket: 'mula-project.appspot.com',
+    apiKey: 'AIzaSyAeUIMIVy_I3qVXrV6oNpdBrROq9FgKwzQ',
+    appId: '1:624649604158:ios:5d9e30f8946ffcf7e2956f',
+    messagingSenderId: '624649604158',
+    projectId: 'themula-project',
+    storageBucket: 'themula-project.appspot.com',
     iosBundleId: 'com.example.trabalho01.RunnerTests',
   );
 }

@@ -13,6 +13,8 @@ import 'package:trabalho_01/view/menu_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trabalho_01/view/perfil_main_view.dart';
 import 'package:trabalho_01/view/produtos_main_view.dart';
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class MyCustomBehavior extends MaterialScrollBehavior {
   @override
@@ -24,7 +26,10 @@ class MyCustomBehavior extends MaterialScrollBehavior {
       };
 }
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     DevicePreview(
       enabled: true,
