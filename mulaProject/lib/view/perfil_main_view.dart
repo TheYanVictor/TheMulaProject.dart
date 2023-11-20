@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trabalho_01/controller/login_controller.dart';
 
 class perfil_main_view extends StatefulWidget {
   const perfil_main_view({super.key});
@@ -8,7 +9,14 @@ class perfil_main_view extends StatefulWidget {
 }
 
 class _perfil_main_viewState extends State<perfil_main_view> {
+  var nome;
+
   @override
+  void initState() {
+    super.initState();
+    nome = LoginController().usuarioLogado().toString();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       //
@@ -75,8 +83,8 @@ class _perfil_main_viewState extends State<perfil_main_view> {
                     ),
                     //Nome e legenda
                     Text(
-                      'Nome da pessoa',
-                      style: TextStyle(fontSize: 25),
+                      nome,
+                      style: TextStyle(fontSize: 30),
                     ),
                     SizedBox(
                       height: 10,

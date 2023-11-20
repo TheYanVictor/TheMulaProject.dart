@@ -1,17 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:trabalho_01/model/grupo.dart';
 
-import '../model/tarefa.dart';
 import '../view/util.dart';
 import 'login_controller.dart';
 
-class TarefaController {
+// ignore: camel_case_types
+class Grupo_Controller {
   //
   // ADICIONAR uma nova Tarefa
   //
-  void adicionar(context, Tarefa t) {
+  void adicionar(context, Grupo t) {
     FirebaseFirestore.instance
-        .collection('tarefas')
+        .collection('grupos')
         .add(t.toJson())
         .then((value) => sucesso(context, 'Tarefa adicionada com sucesso'))
         .catchError(
@@ -22,9 +23,9 @@ class TarefaController {
   //
   // ATUALIZAR
   //
-  void atualizar(context, id, Tarefa t) {
+  void atualizar(context, id, Grupo t) {
     FirebaseFirestore.instance
-        .collection('tarefas')
+        .collection('grupos')
         .doc(id)
         .update(t.toJson())
         .then((value) => sucesso(context, 'Tarefa atualizada com sucesso'))
@@ -38,7 +39,7 @@ class TarefaController {
   //
   void excluir(context, id) {
     FirebaseFirestore.instance
-        .collection('tarefas')
+        .collection('grupos')
         .doc(id)
         .delete()
         .then((value) => sucesso(context, 'Tarefa excluída com sucesso'))
@@ -50,7 +51,8 @@ class TarefaController {
   //
   listar() {
     return FirebaseFirestore.instance
-        .collection('tarefas')
+        .collection('grupos')
         .where('uid', isEqualTo: LoginController().idUsuario());
   }
 }
+

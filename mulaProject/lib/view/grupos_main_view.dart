@@ -1,4 +1,12 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:trabalho_01/controller/grupo_controller.dart';
+import 'package:trabalho_01/controller/login_controller.dart';
+import 'package:trabalho_01/model/grupo.dart';
 
 class grupos_main_view extends StatefulWidget {
   const grupos_main_view({super.key});
@@ -10,9 +18,31 @@ class grupos_main_view extends StatefulWidget {
 //tamanho da lista de contatos
 var list = List<int>.generate(10, (i) => i + 1);
 
+//Recuperar o texto do campo de texto
+final TextEditingController tituloController = TextEditingController();
+final TextEditingController descricaoController = TextEditingController();
+
 class _grupos_main_viewState extends State<grupos_main_view> {
   @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    final dados = await FirebaseFirestore.instance.collection('grupos').get();
+    // Use dados here
+  }
+
+  @override
   Widget build(BuildContext context) {
+    @override
+    void dispose() {
+      // Limpa o controlador quando a tela for encerrada
+      tituloController.dispose();
+      super.dispose();
+    }
+
     return Scaffold(
       //
       //App Bar
@@ -84,40 +114,110 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                   ),
                 ),
               ),
+              //Pop up no canto direito inferior da tela para adicionar um novo grupo
+              FloatingActionButton(
+                backgroundColor: Color.fromARGB(255, 231, 22, 22),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text(
+                          'Adicionar Grupo',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              //Campo de texto para o titulo do grupo
+                              TextField(
+                                controller: tituloController,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.horizontal(
+                                      left: const Radius.circular(20),
+                                      right: const Radius.circular(20),
+                                    ),
+                                  ),
+                                  labelText: 'Titulo',
+                                  labelStyle: const TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                              //Campo de texto para a descricao do grupo
+                              TextField(
+                                controller: descricaoController,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.horizontal(
+                                      left: const Radius.circular(20),
+                                      right: const Radius.circular(20),
+                                    ),
+                                  ),
+                                  labelText: 'Descrição',
+                                  labelStyle: const TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          //Botao de cancelar
+                          TextButton(
+                            child: const Text('Cancelar'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          //Botao de adicionar
+                          TextButton(
+                            child: const Text('Adicionar'),
+                            onPressed: () {
+                              Grupo_Controller().adicionar(
+                                context,
+                                Grupo(
+                                    Random().nextInt(100).toString(),
+                                    tituloController.text,
+                                    descricaoController.text),
+                              );
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: const Icon(Icons.add),
+              ),
             ],
           ),
+          //Listar todos os grupos cadastrados no firebase e mostrar na tela
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 500,
-                width: 350,
-                child: ListView.builder(
-                  itemBuilder: (context, list) {
-                    return Container(
-                      //esse container é só pra alterar a altura dos cards
-                      height: 100,
-                      child: Card(
-                        child: ListTile(
-                          iconColor: Colors.orange,
-                          titleTextStyle: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
-                          leading: Icon(
-                            Icons.group,
-                            size: 60,
-                          ),
-                          title: Text(
-                            'Nome legalzão',
-                            textAlign: TextAlign.center,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(context, 'perfil');
-                          },
-                        ),
-                      ),
-                    );
-                  },
-                ),
+              ListView.builder(
+                itemBuilder: (context, index) {
+                  String id = LoginController().usuarioLogado().toString();
+                  dynamic item = Grupo_Controller().listar().docs[index].data();
+                  return ListTile(
+                    leading: Icon(Icons.description),
+                    title: Text(item['titulo']),
+                    subtitle: Text(item['descricao']),
+                    onTap: () {
+                      tituloController.text = item['titulo'];
+                      descricaoController.text = item['descricao'];
+                      Grupo_Controller().listar();
+                    },
+                  );
+                },
+                itemCount: list.length,
+                shrinkWrap: true,
+                padding: const EdgeInsets.all(20),
               ),
             ],
           ),
