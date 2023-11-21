@@ -6,6 +6,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../controller/login_controller.dart';
 
 class login_view extends StatefulWidget {
   const login_view({super.key});
@@ -38,7 +39,6 @@ class _login_viewState extends State<login_view> {
             height: 100,
           ),
           TextField(
-           
             controller: email,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -60,7 +60,6 @@ class _login_viewState extends State<login_view> {
           ),
           TextField(
             controller: senha,
-            
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.horizontal(
@@ -118,21 +117,18 @@ class _login_viewState extends State<login_view> {
                 txtSenha = senha.text;
               });
 
-              if(txtEmail == ''){
+              if (txtEmail == '') {
                 //avisar q deu errado
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('O e-mail deve ser válido')));
-              }else if(txtSenha == ''){
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('A senha deve ser válida')));
-
-              }else{
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('O e-mail deve ser válido')));
+              } else if (txtSenha == '') {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('A senha deve ser válida')));
+              } else {
                 //ser feliz
-                Navigator.pushNamed(
-                context,
-                'main_menu',
-              );
+                LoginController().login(context, txtEmail, txtSenha);
               }
             },
-
             child: Text(
               'Entrar',
               textAlign: TextAlign.center,

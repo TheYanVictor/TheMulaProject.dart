@@ -28,7 +28,6 @@ class LoginController {
 
       sucesso(context, 'Usuário criado com sucesso.');
       Navigator.pop(context);
-
     }).catchError((e) {
       switch (e.code) {
         case 'email-already-in-use':
@@ -51,7 +50,7 @@ class LoginController {
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((value) {
       sucesso(context, 'Usuário autenticado com sucesso.');
-      Navigator.pushNamed(context, 'principal');
+      Navigator.pushNamed(context, 'main_menu');
     }).catchError((e) {
       switch (e.code) {
         case 'user-not-found':
@@ -76,7 +75,7 @@ class LoginController {
     Navigator.pop(context);
   }
 
-    //
+  //
   // LOGOUT
   //
   logout() {
@@ -106,5 +105,4 @@ class LoginController {
     );
     return usuario;
   }
-
 }

@@ -203,7 +203,7 @@ class _grupos_main_viewState extends State<grupos_main_view> {
               ListView.builder(
                 itemBuilder: (context, index) {
                   String id = LoginController().usuarioLogado().toString();
-                  dynamic item = Grupo_Controller().listar().docs[index].data();
+                  dynamic item = Grupo_Controller().listar().doc[index].data();
                   return ListTile(
                     leading: Icon(Icons.description),
                     title: Text(item['titulo']),
