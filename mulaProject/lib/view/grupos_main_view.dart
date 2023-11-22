@@ -18,6 +18,7 @@ class grupos_main_view extends StatefulWidget {
 //Recuperar o texto do campo de texto
 final TextEditingController tituloController = TextEditingController();
 final TextEditingController descricaoController = TextEditingController();
+final TextEditingController searchController = TextEditingController();
 
 class _grupos_main_viewState extends State<grupos_main_view> {
   @override
@@ -83,6 +84,7 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                 height: 95,
                 width: 290,
                 child: TextField(
+                  controller: searchController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.horizontal(
@@ -189,50 +191,128 @@ class _grupos_main_viewState extends State<grupos_main_view> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              StreamBuilder<QuerySnapshot>(
-                stream: Grupo_Controller().listar().snapshots(),
-                builder: (context, snapshot) {
-                  //Tratar caso não conecte com o firebase
-                  switch (snapshot.connectionState) {
-                    //Caso não conecte
-                    case ConnectionState.none:
-                      return Center(
-                        child: Text('Erro ao conectar com o banco de dados'),
-                      );
-                    //Caso esteja esperando
-                    case ConnectionState.waiting:
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    //Caso esteja ativo
-                    default:
-                      final dados = snapshot.requireData as QuerySnapshot;
-                      //Caso não tenha nenhum grupo cadastrado
-                      if (dados.size == 0) {
+              Container(
+                height: 500,
+                width: 350,
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: Grupo_Controller().listar().snapshots(),
+                  builder: (context, snapshot) {
+                    //Tratar caso não conecte com o firebase
+                    switch (snapshot.connectionState) {
+                      //Caso não conecte
+                      case ConnectionState.none:
                         return Center(
-                          child: Text('Nenhum grupo cadastrado'),
+                          child: Text('Erro ao conectar com o banco de dados'),
                         );
-                      } else {
-                        return ListView.builder(
-                          itemCount: dados.size,
-                          itemBuilder: (context, index) {
-                            String id = dados.docs[index].id;
-                            dynamic item = dados.docs[index].data();
-                            return Card(
-                              child: ListTile(
-                                leading: Icon(Icons.description),
-                                title: Text(item['titulo']),
-                                subtitle: Text(item['descricao']),
-                                onTap: () {
-                                  Grupo_Controller().excluir(context, id);
-                                },
-                              ),
-                            );
-                          },
+                      //Caso esteja esperando
+                      case ConnectionState.waiting:
+                        return Center(
+                          child: CircularProgressIndicator(),
                         );
-                      }
-                  }
-                },
+                      //Caso esteja ativo
+                      default:
+                        final dados = snapshot.requireData as QuerySnapshot;
+                        //Caso não tenha nenhum grupo cadastrado
+                        if (dados.size == 0) {
+                          return Center(
+                            child: Text('Nenhum grupo cadastrado'),
+                          );
+                        } else {
+                          return ListView.builder(
+                            itemCount: dados.size,
+                            itemBuilder: (context, index) {
+                              String id = dados.docs[index].id;
+                              dynamic item = dados.docs[index].data();
+                              return Card(
+                                child: ListTile(
+                                  leading: Icon(Icons.description),
+                                  title: Text(item['titulo']),
+                                  subtitle: Text(item['descricao']),
+                                  onTap: () {
+                                    // Abria um popup com as opções de editar e excluir
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        late TextEditingController
+                                            newdescricaoController =
+                                            TextEditingController(
+                                                text: item['descricao']);
+                                        late TextEditingController
+                                            newtituloController =
+                                            TextEditingController(
+                                                text: item['titulo']);
+                                        return AlertDialog(
+                                          //Edita o titulo
+                                          title: TextField(
+                                            controller: newtituloController,
+                                            decoration: InputDecoration(
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.horizontal(
+                                                  left:
+                                                      const Radius.circular(20),
+                                                  right:
+                                                      const Radius.circular(20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          //Edita a descricao
+                                          content: TextField(
+                                            controller: newdescricaoController,
+                                            decoration: InputDecoration(
+                                              border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.horizontal(
+                                                  left:
+                                                      const Radius.circular(20),
+                                                  right:
+                                                      const Radius.circular(20),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          //Botao
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text('Cancelar'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            TextButton(
+                                              child: const Text('Salvar'),
+                                              onPressed: () {
+                                                Grupo_Controller().atualizar(
+                                                  context,
+                                                  id,
+                                                  Grupo(
+                                                    LoginController()
+                                                        .idUsuario(),
+                                                    newtituloController.text,
+                                                    newdescricaoController.text,
+                                                  ),
+                                                );
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  onLongPress: () {
+                                    // Excuir o grupo
+                                    Grupo_Controller().excluir(context, id);
+                                  },
+                                ),
+                              );
+                            },
+                          );
+                        }
+                    }
+                  },
+                ),
               )
             ],
           ),
