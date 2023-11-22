@@ -100,6 +100,7 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                       ),
                     ),
                   ),
+                  onSubmitted: (value) {},
                 ),
               ),
               //Pop up no canto direito superior da tela para adicionar um novo grupo
@@ -287,11 +288,11 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                                                   context,
                                                   id,
                                                   Grupo(
-                                                    LoginController()
-                                                        .idUsuario(),
-                                                    newtituloController.text,
-                                                    newdescricaoController.text,
-                                                  ),
+                                                      LoginController()
+                                                          .idUsuario(),
+                                                      newtituloController.text,
+                                                      newdescricaoController
+                                                          .text),
                                                 );
                                                 Navigator.of(context).pop();
                                               },
