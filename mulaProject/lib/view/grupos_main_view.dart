@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_cast
 
 import 'dart:math';
 
@@ -19,6 +19,7 @@ class grupos_main_view extends StatefulWidget {
 final TextEditingController tituloController = TextEditingController();
 final TextEditingController descricaoController = TextEditingController();
 final TextEditingController searchController = TextEditingController();
+var searchKey = '';
 
 class _grupos_main_viewState extends State<grupos_main_view> {
   @override
@@ -100,7 +101,21 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                       ),
                     ),
                   ),
-                  onSubmitted: (value) {},
+                  // Parte que vai fazer a pesquisa
+
+                  onChanged: (value) {
+                    setState(
+                      () {
+                        searchKey = value;
+                        /*streamQuery = _firestore
+                            .collection('Col-Name')
+                            .where('fieldName',
+                                isGreaterThanOrEqualTo: searchKey)
+                            .where('fieldName', isLessThan: searchKey + 'z')
+                            .snapshots();*/
+                      },
+                    );
+                  },
                 ),
               ),
               //Pop up no canto direito superior da tela para adicionar um novo grupo
@@ -196,7 +211,9 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                 height: 500,
                 width: 350,
                 child: StreamBuilder<QuerySnapshot>(
-                  stream: Grupo_Controller().listar().snapshots(),
+                  stream: Grupo_Controller()
+                      .pesquisarPorTitulo(searchKey)
+                      .snapshots(),
                   builder: (context, snapshot) {
                     //Tratar caso não conecte com o firebase
                     switch (snapshot.connectionState) {

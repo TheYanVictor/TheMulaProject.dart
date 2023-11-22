@@ -54,5 +54,19 @@ class Grupo_Controller {
         .collection('grupos')
         .where('uid', isEqualTo: LoginController().idUsuario());
   }
-}
 
+  pesquisarPorTitulo(titulo) {
+    var resultado = FirebaseFirestore.instance
+        .collection('grupos')
+        .where('uid', isEqualTo: LoginController().idUsuario())
+        .where('titulo', isGreaterThanOrEqualTo: titulo);
+
+    if (resultado == null) {
+      return FirebaseFirestore.instance
+          .collection('grupos')
+          .where('uid', isEqualTo: LoginController().idUsuario());
+    } else {
+      return resultado;
+    }
+  }
+}
