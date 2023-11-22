@@ -15,25 +15,11 @@ class grupos_main_view extends StatefulWidget {
   State<grupos_main_view> createState() => _grupos_main_viewState();
 }
 
-//tamanho da lista de contatos
-var list = List<int>.generate(10, (i) => i + 1);
-
 //Recuperar o texto do campo de texto
 final TextEditingController tituloController = TextEditingController();
 final TextEditingController descricaoController = TextEditingController();
 
 class _grupos_main_viewState extends State<grupos_main_view> {
-  @override
-  void initState() {
-    super.initState();
-    fetchData();
-  }
-
-  Future<void> fetchData() async {
-    final dados = await FirebaseFirestore.instance.collection('grupos').get();
-    // Use dados here
-  }
-
   @override
   Widget build(BuildContext context) {
     @override
@@ -114,7 +100,7 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                   ),
                 ),
               ),
-              //Pop up no canto direito inferior da tela para adicionar um novo grupo
+              //Pop up no canto direito superior da tela para adicionar um novo grupo
               FloatingActionButton(
                 backgroundColor: Color.fromARGB(255, 231, 22, 22),
                 onPressed: () {
@@ -181,10 +167,13 @@ class _grupos_main_viewState extends State<grupos_main_view> {
                               Grupo_Controller().adicionar(
                                 context,
                                 Grupo(
-                                    Random().nextInt(100).toString(),
+                                    LoginController().idUsuario(),
                                     tituloController.text,
                                     descricaoController.text),
                               );
+                              Navigator.of(context).pop();
+                              tituloController.clear();
+                              descricaoController.clear();
                             },
                           ),
                         ],
@@ -200,25 +189,51 @@ class _grupos_main_viewState extends State<grupos_main_view> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ListView.builder(
-                itemBuilder: (context, index) {
-                  String id = LoginController().usuarioLogado().toString();
-                  dynamic item = Grupo_Controller().listar().doc[index].data();
-                  return ListTile(
-                    leading: Icon(Icons.description),
-                    title: Text(item['titulo']),
-                    subtitle: Text(item['descricao']),
-                    onTap: () {
-                      tituloController.text = item['titulo'];
-                      descricaoController.text = item['descricao'];
-                      Grupo_Controller().listar();
-                    },
-                  );
+              StreamBuilder<QuerySnapshot>(
+                stream: Grupo_Controller().listar().snapshots(),
+                builder: (context, snapshot) {
+                  //Tratar caso não conecte com o firebase
+                  switch (snapshot.connectionState) {
+                    //Caso não conecte
+                    case ConnectionState.none:
+                      return Center(
+                        child: Text('Erro ao conectar com o banco de dados'),
+                      );
+                    //Caso esteja esperando
+                    case ConnectionState.waiting:
+                      return Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    //Caso esteja ativo
+                    default:
+                      final dados = snapshot.requireData as QuerySnapshot;
+                      //Caso não tenha nenhum grupo cadastrado
+                      if (dados.size == 0) {
+                        return Center(
+                          child: Text('Nenhum grupo cadastrado'),
+                        );
+                      } else {
+                        return ListView.builder(
+                          itemCount: dados.size,
+                          itemBuilder: (context, index) {
+                            String id = dados.docs[index].id;
+                            dynamic item = dados.docs[index].data();
+                            return Card(
+                              child: ListTile(
+                                leading: Icon(Icons.description),
+                                title: Text(item['titulo']),
+                                subtitle: Text(item['descricao']),
+                                onTap: () {
+                                  Grupo_Controller().excluir(context, id);
+                                },
+                              ),
+                            );
+                          },
+                        );
+                      }
+                  }
                 },
-                itemCount: list.length,
-                shrinkWrap: true,
-                padding: const EdgeInsets.all(20),
-              ),
+              )
             ],
           ),
         ],

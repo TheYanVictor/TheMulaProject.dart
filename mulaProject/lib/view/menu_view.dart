@@ -33,28 +33,29 @@ class _menu_view extends State<menu_view> {
                   color: Color(0xFFF24C3D), size: 40),
             )),
         title: FutureBuilder<String>(
-            future: LoginController().usuarioLogado(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return Container(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      snapshot.data.toString(),
-                      style: TextStyle(fontSize: 20, color: Color(0xff666666)),
-                    ),
-                    Text('Bem Vindo!',
-                        style: TextStyle(
-                            fontSize: 35,
-                            color: Color(0xff231E1A),
-                            fontWeight: FontWeight.bold))
-                  ],
-                ));
-              } else {
-                return Text('');
-              }
-            }),
+          future: LoginController().usuarioLogado(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Container(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    snapshot.data.toString(),
+                    style: TextStyle(fontSize: 20, color: Color(0xff666666)),
+                  ),
+                  Text('Bem Vindo!',
+                      style: TextStyle(
+                          fontSize: 35,
+                          color: Color(0xff231E1A),
+                          fontWeight: FontWeight.bold))
+                ],
+              ));
+            } else {
+              return Text('');
+            }
+          },
+        ),
         actions: [
           Container(
               padding: EdgeInsets.only(right: 20),
