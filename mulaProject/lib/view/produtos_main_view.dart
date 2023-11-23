@@ -255,7 +255,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),
@@ -266,7 +266,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),
@@ -277,7 +277,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),
@@ -288,7 +288,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),
@@ -299,7 +299,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),
@@ -310,7 +310,7 @@ class _produtos_main_viewState extends State<produtos_main_view> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://www.ype.ind.br/wp-content/uploads/2015/08/lavaloucas_7_thumb_20230616.png'),
+                                  'https://dcdn.mitiendanube.com/stores/001/360/941/products/sabao-barra-ype-neutro1-1fb16d8e709a0ef61816339767065200-640-0.png'),
                             ),
                           ),
                         ),

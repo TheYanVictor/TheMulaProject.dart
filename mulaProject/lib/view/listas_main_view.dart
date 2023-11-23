@@ -114,7 +114,7 @@ class _listas_main_viewState extends State<listas_main_view> {
                         image: NetworkImage(
                             'https://64.media.tumblr.com/8608853521e0b73bd2f143b6fb5c09cc/77f62d756529cff0-e1/s400x600/8ae71bc7af279115ca5dd5e6ebe5f07e6bdecc75.jpg')),
                     title: Text(
-                      'Grupo',
+                      'LIsta de compras',
                       style: TextStyle(
                         fontSize: 25,
                       ),
